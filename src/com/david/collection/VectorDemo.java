@@ -1,5 +1,7 @@
-package com.david.thread;
+package com.david.collection;
 import java.util.Vector;
+
+import com.david.entity.Student;
 
 
 public class VectorDemo
