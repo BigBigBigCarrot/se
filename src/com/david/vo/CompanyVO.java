@@ -1,4 +1,4 @@
-package com.david.VO;
+package com.david.vo;
 
 public class CompanyVO implements java.io.Serializable{
     private static final long serialVersionUID = 8683452581122892189L;

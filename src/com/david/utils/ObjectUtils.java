@@ -7,7 +7,7 @@ import java.io.NotSerializableException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import com.david.VO.CompanyVO;
+import com.david.vo.CompanyVO;
 
 public class ObjectUtils {
 	/**

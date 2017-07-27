@@ -1,7 +1,7 @@
 package com.david.collection;
 import java.util.Vector;
 
-import com.david.entity.Student;
+import com.david.vo.Student;
 
 
 public class VectorDemo

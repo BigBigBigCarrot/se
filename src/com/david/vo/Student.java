@@ -1,4 +1,4 @@
-package com.david.entity;
+package com.david.vo;
 
 public class Student implements Cloneable
 {
