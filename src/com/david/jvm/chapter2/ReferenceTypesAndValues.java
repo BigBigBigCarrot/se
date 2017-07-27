@@ -1,7 +1,6 @@
 package com.david.jvm.chapter2;
 
 import java.text.MessageFormat;
-import java.util.Formatter;
 
 
 /**
