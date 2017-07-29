@@ -1,4 +1,4 @@
-package com.david.jvm.brace;
+package com.david.jvm.loading;
 
 /**
  * 
@@ -11,7 +11,7 @@ package com.david.jvm.brace;
  * @date 2017年7月29日
  *
  */
-public class JvmLoadingMechanismPractice
+public class JvmClassLoadingMechanismPractice
 {
 	/**
 	 * static语句块
@@ -34,14 +34,28 @@ public class JvmLoadingMechanismPractice
 	 */
 	public static void main(String[] args)
 	{
+		f0();
+		
 //		f1();
 //		f2();
-		int a=ClassA.A_CONSTANT_VALUE;//使用静态变量[或常量]，不触发static语句块(静态变量编译期间即可确定)
+	}
+	
+	/**
+	 * JVM的类加载机制测试
+	 * @Description: 
+	 * @date 2017年7月29日
+	 */
+	public static void f0(){
+//		int a=ClassA.aStaticValue;//使用未被final修饰的静态变量，需要加载类信息，会触发static语句块;
+//		int b=ClassA.A_CONSTANT_VALUE;//使用被final关键字修饰的静态变量，在编译时就放入常量池，调用该变量不加载类，不触发static语句块
 //		ClassA.staticFunction();//调用静态方法，触发static语句块s
 //		ClassA classA;//声明一个ClassA的reference，不初始化ClassA这个类，也就不触发static语句块
 //		classA=new ClassA();//首次new 一个ClassA的实例，初始化ClassA这个类，触发static语句块，且先于构造函数执行;
 //		classA=new ClassA();//第二次new 一个ClassA的实例，ClassA的信息此前已被初始化，故此时不再触发static语句块
+		{}//需要加载一个类，且这个类的父类尚未初始化时，会初始化父类
+		ClassA[] arrayA=ClassA.arrayA;//触发static语句块
 	}
+	
 
 	/**
 	 * 大括号用法测试1

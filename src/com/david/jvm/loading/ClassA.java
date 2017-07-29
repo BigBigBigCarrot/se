@@ -1,8 +1,10 @@
-package com.david.jvm.brace;
+package com.david.jvm.loading;
 
 public class ClassA
 {
+	static int aStaticValue=0;
 	static final int A_CONSTANT_VALUE=1;
+	static ClassA[] arrayA=new ClassA[1];
 	
 	static
 	{
