@@ -4,7 +4,7 @@ import com.david.tree.binary_tree.BinaryTree;
 import com.david.tree.binary_tree.Node;
 
 public class StackLevel {
-	public static int counter=0;//stackLevel()Ö´ĞĞ´ÎÊı
+	public static int counter=0;//
 //	private int level = 1;
 //	int a;
 //	String str="";
@@ -13,17 +13,21 @@ public class StackLevel {
 	public void stackLevel() {
 		counter=counter+1;
 		
-		//·½·¨µÄÖ´ĞĞ»ùÓÚÕ»£¬Ã¿µ÷ÓÃÒ»´Î·½·¨ÔòÔÚÕ»ÖĞ´´½¨Ò»¸öframe(Õ»Ö¡)£¬frameµÄ´óĞ¡È¡¾öÓÚ·½·¨ÖĞµÄ¾Ö²¿±äÁ¿ºÍ²Ù×÷ÊıÕ»ÒÔ¼°µ±Ç°ÀàµÄ³£Á¿³ØµÄÒıÓÃ£¬
-		//ÎªÕ»·ÖÅäµÄ¶îÄÚ´æÒ»¶¨Ê±£¬frameÔ½´ó£¬Õ»Ô½ÈİÒ×Òç³ö
-		//int a=1,b=2,c=3;
-		//int a=1+2+3+4+5+6+7;
-		String s1="",s2="",s3="";
+		//åŸºæœ¬ç±»å‹
+//		int a=1,b=2,c=3;
+		//æ“ä½œç¬¦ï¼ˆæ“ä½œæ•°æ ˆï¼‰
+//		int a=1+2+3+4+5+6+7;
+		//å¯¹è±¡å¼•ç”¨(reference)
+//		String s1="",s2="",s3="";
 		
+		//æ–¹æ³•è°ƒç”¨
+//		f();
 //		System.out.println("stackLevel() executed");
 //		System.out.println("counter:"+counter);
 		//tree.add(new Node(1));//
 
 		
+		//å¾ªç¯ä½“
 //		for(int i=0;i<=0;i++){	
 //		}
 		
