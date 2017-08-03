@@ -7,7 +7,8 @@ public class ExceptionPractice {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(f());
+//		System.out.println(f());
+		f2();
 	}
 	
 	public static int f(){
@@ -35,6 +36,15 @@ public class ExceptionPractice {
 			System.out.println("value of the local variable 'x' after execute the finally bolck:"+x);
 //			return 3;
 		}
+	}
+	
+	/**
+	 * 对可能出现的异常不做catch，而是抛出给方法的调用者
+	 * @throws ArrayIndexOutOfBoundsException
+	 */
+	public static void f2()throws ArrayIndexOutOfBoundsException{
+		int[] a={1};
+		a[1]++;
 	}
 
 }
