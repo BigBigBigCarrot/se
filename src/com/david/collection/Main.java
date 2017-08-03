@@ -35,6 +35,10 @@ public class Main {
 		}
 	}
 	
+	public static void HashMapPractice(){
+		Map map=new HashMap();
+	}
+	
 	
 
 }
