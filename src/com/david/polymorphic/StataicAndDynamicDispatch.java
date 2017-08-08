@@ -1,5 +1,7 @@
 package com.david.polymorphic;
 
+import java.util.Scanner;
+
 public class StataicAndDynamicDispatch {
 
 	public StataicAndDynamicDispatch() {
@@ -37,9 +39,13 @@ public class StataicAndDynamicDispatch {
 
 	public static void main(String[] args) {
 //		staticDispatch();
-		dynamicDispatch();
+//		dynamicDispatch();
+		dynamicDispatch2();
 	}
 	
+	/**
+	 * 静态分派，编译时可知
+	 */
 	public static void staticDispatch(){
 		Human man,woman;
 		man=new Man();
@@ -48,12 +54,33 @@ public class StataicAndDynamicDispatch {
 		StataicAndDynamicDispatch.sayHello(woman);
 	}
 	
+	/**
+	 * 动态分派，编译时不可知
+	 */
 	public static void dynamicDispatch(){
 		Human man,woman;
 		man=new Man();
 		woman=new Woman();
 		man.sayHi();
 		woman.sayHi();
+	}
+	
+	/**
+	 * 动态分派，编译时不可知
+	 */
+	public static void dynamicDispatch2(){
+		Human person;
+		while(true){
+			System.out.println("please type 1 or something else");
+			Scanner sc = new Scanner(System.in);
+			int choice = sc.nextInt();
+			if(choice==1){
+				person=new Man();
+			}else{
+				person=new Woman();
+			}
+			person.sayHi();
+		}
 	}
 
 }
