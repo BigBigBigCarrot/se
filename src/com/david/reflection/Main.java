@@ -19,10 +19,14 @@ public class Main {
 //		String reversedStr=Main.reverse(str);
 //		System.out.println(reversedStr);
 //		ClassLoader cl;
+//		f1();
+		f2();
 		
+		
+	}
+	
+	public static void f1(){
 		try{
-			//获取代表"java.lang.Integer"的Class对象的引用（instance）
-			//获取不到时抛出ClassNotFoundException
 			Class c=Class.forName("java.lang.Integer");
 			
 			System.out.println(c);
@@ -33,7 +37,12 @@ public class Main {
 			System.out.println(e.getMessage());
 			System.out.println(e.toString());
 		}
-		
+	}
+	
+
+	public static void f2(){
+		Object o=new String("");
+		System.out.println(o.getClass().getName());
 	}
 
 }
