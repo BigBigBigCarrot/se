@@ -15,7 +15,8 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		sortPractice();
+//		sortPractice();
+		HashMapPractice();
 	}
 	public static void linkedListPractice(){
 		List linkedList=new LinkedList();
@@ -36,7 +37,11 @@ public class Main {
 	}
 	
 	public static void HashMapPractice(){
-		Map map=new HashMap();
+		Map<String,String> map=new HashMap<String,String>();
+		map.put("key1", "value1.0");
+		String v;
+		v=map.put("key1", "value1.1");
+		System.out.println(v);
 	}
 	
 	
