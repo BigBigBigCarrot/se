@@ -20,7 +20,8 @@ public class Main {
 //		System.out.println(reversedStr);
 //		ClassLoader cl;
 //		f1();
-		f2();
+//		f2();
+		f3();
 		
 		
 	}
@@ -43,6 +44,11 @@ public class Main {
 	public static void f2(){
 		Object o=new String("");
 		System.out.println(o.getClass().getName());
+	}
+	
+	public static void f3(){
+		Object[] oArray=new Object[3];
+		System.out.println(oArray.getClass().getName());
 	}
 
 }
