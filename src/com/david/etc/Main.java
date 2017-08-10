@@ -10,6 +10,7 @@ public class Main {
 //		f2();
 //		f3();
 //		f4();
+		f7();
 	}
 	
 	/**
@@ -70,5 +71,17 @@ public class Main {
 //		Student stu=cl.newInstance();
 //		System.out.println(Student.class.getClassLoader().getClass().getName());
 //	}
+	
+	public static void f7(){
+		Class cl;
+		try{
+//			cl=Class.forName("java.lang.String");
+			cl=Class.forName("com.david.vo.Student");
+		}catch(ClassNotFoundException e){
+			System.out.println(e.toString());
+			return;
+		}
+		System.out.println(cl.getProtectionDomain().getCodeSource().getLocation());
+	}
 	
 }

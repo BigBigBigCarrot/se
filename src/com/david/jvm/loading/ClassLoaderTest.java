@@ -3,6 +3,9 @@ package com.david.jvm.loading;
 import java.io.IOException;
 import java.io.InputStream;
 
+import com.david.vo.CompanyVO;
+import com.david.vo.Student;
+
 public class ClassLoaderTest {
 
 	public ClassLoaderTest() {
@@ -31,7 +34,10 @@ public class ClassLoaderTest {
 		String name="com.david.vo.CompanyVO";
 		Object obj=myLoader.loadClass(name).newInstance();
 		System.out.println(obj.getClass());
+		System.out.println(obj.getClass().getClassLoader());
+		System.out.println(CompanyVO.class.getClassLoader());
 		System.out.println(obj instanceof com.david.vo.CompanyVO);
+		System.out.println(myLoader.getClass().getName());
 	}
 
 }
