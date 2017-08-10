@@ -27,6 +27,7 @@ public class MyClassLoader extends ClassLoader
      * 双亲委派模式下，类的加载首先交由父加载器执行，
      * 当加载com.david.vo.CompanyVO时，CompanyVO在classPath所以下可由com.david.vo.CompanyVO加载，就不执行此函数。
      * 当加载F:/DavidSpace/Documents/etc/jvm/Test.class (不在classPath目录下，双亲无法加载)，执行此函数
+     * jvm推荐用户自定义的classLoader不重写loadClass方法，而是重写findClass方法，保证符合双亲委派模式
      */
     public Class<?> findClass(String name)
     {

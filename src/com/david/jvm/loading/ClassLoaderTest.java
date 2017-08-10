@@ -20,6 +20,7 @@ public class ClassLoaderTest {
 					String fileName=name.substring(name.lastIndexOf(".")+1)+".class";
 					InputStream is=getClass().getResourceAsStream(fileName);
 					if(is==null){
+						System.out.println("is==null return super.loadClass(name)");
 						return super.loadClass(name);
 					}
 					byte[] b=new byte[is.available()];
