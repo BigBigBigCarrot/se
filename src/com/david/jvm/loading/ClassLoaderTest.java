@@ -40,5 +40,5 @@ public class ClassLoaderTest {
 		System.out.println(obj instanceof com.david.vo.CompanyVO);
 		System.out.println(myLoader.getClass().getName());
 	}
-
+	
 }

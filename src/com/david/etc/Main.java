@@ -10,7 +10,8 @@ public class Main {
 //		f2();
 //		f3();
 //		f4();
-		f7();
+//		f7();
+		f8();
 	}
 	
 	/**
@@ -82,6 +83,11 @@ public class Main {
 			return;
 		}
 		System.out.println(cl.getProtectionDomain().getCodeSource().getLocation());
+	}
+	
+	public static void f8(){
+		String qualifiedName="com.david.vo.CompanyVO";
+		System.out.println(qualifiedName.replace(".", "/"));
 	}
 	
 }
