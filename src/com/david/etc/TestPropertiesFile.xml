@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">  
+<properties>  
+    <comment>系统配置</comment>  
+    <entry  
+        key="descript"><![CDATA[the testing properties file in xml format]]></entry>  
+    <entry  
+        key="author.name"><![CDATA[david]]></entry>
+    <entry  
+        key="welcome"><![CDATA[欢迎您！]]></entry>  
+</properties>  
