@@ -24,10 +24,10 @@ public class BinaryTree<T> {
 	public Node<T> popMin(){
 		Node<T> minNode=null;
 		minNode=root.popMin();
-		if(minNode==root){//µ¯³öµÄ½ÚµãÎª¸ù½Úµã
-			if(root.getRight()==null){//¸ù½ÚµãÃ»ÓĞÓÒ×Ó½Úµã
+		if(minNode==root){//å¼¹å‡ºçš„èŠ‚ç‚¹ä¸ºæ ¹èŠ‚ç‚¹
+			if(root.getRight()==null){//æ ¹èŠ‚ç‚¹æ²¡æœ‰å³å­èŠ‚ç‚¹
 				root=null;
-			}else{//¸ù½ÚµãÓĞÓÒ×Ó½Úµã
+			}else{//æ ¹èŠ‚ç‚¹æœ‰å³å­èŠ‚ç‚¹
 				root=root.getRight();
 			}
 		}
@@ -37,10 +37,10 @@ public class BinaryTree<T> {
 	public Node<T> popMax(){
 		Node<T> maxNode=null;
 		maxNode=root.popMax();
-		if(maxNode==root){//µ¯³öµÄ½ÚµãÎª¸ù½Úµã
-			if(root.getLeft()==null){//¸ù½ÚµãÃ»ÓĞ×ó×Ó½Úµã
+		if(maxNode==root){//å¼¹å‡ºçš„èŠ‚ç‚¹ä¸ºæ ¹èŠ‚ç‚¹
+			if(root.getLeft()==null){//æ ¹èŠ‚ç‚¹æ²¡æœ‰å·¦å­èŠ‚ç‚¹
 				root=null;
-			}else{//¸ù½ÚµãÓĞ×ó×Ó½Úµã
+			}else{//æ ¹èŠ‚ç‚¹æœ‰å·¦å­èŠ‚ç‚¹
 				root=root.getLeft();
 			}
 		}
@@ -55,7 +55,7 @@ public class BinaryTree<T> {
 		this.root = root;
 	}
 	
-	/**ÏÈĞòµİ¹é±éÀú¶ş²æÊ÷*/
+	/**å…ˆåºé€’å½’éå†äºŒå‰æ ‘*/
 	public void preOrderTraverse(){
 		preOrderTraverse(root);
 	}
@@ -67,7 +67,7 @@ public class BinaryTree<T> {
 		}
 	}
 	
-	/**ÖĞĞòµİ¹é±éÀú¶ş²æÊ÷*/
+	/**ä¸­åºé€’å½’éå†äºŒå‰æ ‘*/
 	public void inOrderTraverse(){
 		inOrderTraverse(root);
 	}
@@ -79,7 +79,7 @@ public class BinaryTree<T> {
 		}
 	}
 	
-	/**ºóĞòµİ¹é±éÀú¶ş²æÊ÷*/
+	/**ååºé€’å½’éå†äºŒå‰æ ‘*/
 	public void postOrderTraverse(){
 		postOrderTraverse(root);
 	}
@@ -92,7 +92,7 @@ public class BinaryTree<T> {
 	}
 	
 	/**
-	 * ÏÈĞò·µ»Ø½Úµã
+	 * å…ˆåºè¿”å›èŠ‚ç‚¹
 	 * @return List<Node<T>>
 	 */
 	public List<Node<T>> getPreOrderList(){
@@ -110,7 +110,7 @@ public class BinaryTree<T> {
 	}
 	
 	/**
-	 * ÖĞĞò·µ»Ø½Úµã
+	 * ä¸­åºè¿”å›èŠ‚ç‚¹
 	 * @return List<Node<T>>
 	 */
 	public List<Node<T>> getPostOrderList(){
@@ -128,7 +128,7 @@ public class BinaryTree<T> {
 	}
 	
 	/**
-	 * ºóĞò·µ»Ø½Úµã
+	 * ååºè¿”å›èŠ‚ç‚¹
 	 * @return List<Node<T>>
 	 */
 	public List<Node<T>> getInOrderList(){
@@ -147,7 +147,7 @@ public class BinaryTree<T> {
 	}
 	
 	/**
-	 * ·µ»Ø½ÚµãÊı
+	 * è¿”å›èŠ‚ç‚¹æ•°
 	 * @param args
 	 */
 	public int size(){
@@ -176,7 +176,7 @@ public class BinaryTree<T> {
 		//tree.preOrderTraverse();
 		//tree.inOrderTraverse();
 		//tree.postOrderTraverse();
-		/*²âÊÔ popMin()
+		/*æµ‹è¯• popMin()
 		node=tree.popMin();
 		node=tree.popMin();
 		node=tree.popMin();
@@ -187,7 +187,7 @@ public class BinaryTree<T> {
 		tree.preOrderTraverse();
 		*/
 		
-		/*²âÊÔ popMax()
+		/*æµ‹è¯• popMax()
 		node=tree.popMax();
 		node=tree.popMax();
 		node=tree.popMax();
@@ -197,7 +197,7 @@ public class BinaryTree<T> {
 		tree.preOrderTraverse();
 		*/
 		
-		/* ²âÊÔ±éÀúµÃµ½List
+		/* æµ‹è¯•éå†å¾—åˆ°List
 		List<Node<Integer>> list;
 		
 		node=tree.popMin();
@@ -215,13 +215,13 @@ public class BinaryTree<T> {
 		*/
 		//tree.preOrderTraverse();
 		
-		/* ²âÊÔsize()
+		/* æµ‹è¯•size()
 		tree.popMax();
 		tree.popMax();
 		System.out.println(tree.size());
 		*/
 		
-		//Õ»Òç³ö²âÊÔ
+		//æ ˆæº¢å‡ºæµ‹è¯•
 		int i=0;
 		BinaryTree<Double> tree2=new BinaryTree<Double>();
 		try{
@@ -231,7 +231,7 @@ public class BinaryTree<T> {
 				System.out.println(i);
 			}
 		}catch(Exception e){
-			System.out.println(i+"¸ö½ÚµãºóÕ»Òç³ö");
+			System.out.println(i+"ä¸ªèŠ‚ç‚¹åæ ˆæº¢å‡º");
 		}
 		
 	}

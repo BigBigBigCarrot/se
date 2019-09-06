@@ -15,7 +15,7 @@ public class Main {
 		
 		try{
 			preparedStatement=connection.prepareStatement(sql);
-			resultSet=preparedStatement.executeQuery();//执行语句，得到结果集
+			resultSet=preparedStatement.executeQuery();//鎵ц璇彞锛屽緱鍒扮粨鏋滈泦
 		
 			while (resultSet.next()) {  
                 String id = resultSet.getString(1);  
@@ -24,7 +24,7 @@ public class Main {
                 String dob = resultSet.getString(4); 
                 String phone = resultSet.getString(5);
                 System.out.println(id + "\t" + firstName + "\t" + lastName + "\t" + dob );  
-            }//显示数据 
+            }//鏄剧ず鏁版嵁 
 		
 		}catch (Exception e) {
 			System.out.println(e.toString());

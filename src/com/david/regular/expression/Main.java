@@ -12,11 +12,11 @@ public class Main {
 		// String content = "I am noob " + "from runoob.com.";
 		// String pattern = ".*runoob.*";
 		// boolean isMatch = Pattern.matches(pattern, content);
-		// System.out.println("×Ö·û´®ÖĞÊÇ·ñ°üº¬ÁË 'runoob' ×Ó×Ö·û´®? " + isMatch);
+		// System.out.println("å­—ç¬¦ä¸²ä¸­æ˜¯å¦åŒ…å«äº† 'runoob' å­å­—ç¬¦ä¸²? " + isMatch);
 
 		String content;
 		String pattern;
-//		content = "°¡a";
+//		content = "å•Ša";
 //		pattern = ".{2}";
 
 //		content = "ab";

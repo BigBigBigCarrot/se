@@ -28,10 +28,10 @@ public class BalancedBinaryTree<T> {
 	public Node<T> popMin(){
 		Node<T> minNode=null;
 		minNode=root.popMin();
-		if(minNode==root){//µ¯³öµÄ½ÚµãÎª¸ù½Úµã
-			if(root.getRight()==null){//¸ù½ÚµãÃ»ÓĞÓÒ×Ó½Úµã
+		if(minNode==root){//å¼¹å‡ºçš„èŠ‚ç‚¹ä¸ºæ ¹èŠ‚ç‚¹
+			if(root.getRight()==null){//æ ¹èŠ‚ç‚¹æ²¡æœ‰å³å­èŠ‚ç‚¹
 				root=null;
-			}else{//¸ù½ÚµãÓĞÓÒ×Ó½Úµã
+			}else{//æ ¹èŠ‚ç‚¹æœ‰å³å­èŠ‚ç‚¹
 				root=root.getRight();
 				root.setFather(null);
 				root.resetLevel();
@@ -43,10 +43,10 @@ public class BalancedBinaryTree<T> {
 	public Node<T> popMax(){
 		Node<T> maxNode=null;
 		maxNode=root.popMax();
-		if(maxNode==root){//µ¯³öµÄ½ÚµãÎª¸ù½Úµã
-			if(root.getLeft()==null){//¸ù½ÚµãÃ»ÓĞ×ó×Ó½Úµã
+		if(maxNode==root){//å¼¹å‡ºçš„èŠ‚ç‚¹ä¸ºæ ¹èŠ‚ç‚¹
+			if(root.getLeft()==null){//æ ¹èŠ‚ç‚¹æ²¡æœ‰å·¦å­èŠ‚ç‚¹
 				root=null;
-			}else{//¸ù½ÚµãÓĞ×ó×Ó½Úµã
+			}else{//æ ¹èŠ‚ç‚¹æœ‰å·¦å­èŠ‚ç‚¹
 				root=root.getLeft();
 				root.setFather(null);
 				root.resetLevel();
@@ -63,7 +63,7 @@ public class BalancedBinaryTree<T> {
 		this.root = root;
 	}
 	
-	/**ÏÈĞòµİ¹é±éÀú¶ş²æÊ÷*/
+	/**å…ˆåºé€’å½’éå†äºŒå‰æ ‘*/
 	public void preOrderTraverse(){
 		preOrderTraverse(root);
 	}
@@ -75,7 +75,7 @@ public class BalancedBinaryTree<T> {
 		}
 	}
 	
-	/**ÖĞĞòµİ¹é±éÀú¶ş²æÊ÷*/
+	/**ä¸­åºé€’å½’éå†äºŒå‰æ ‘*/
 	public void inOrderTraverse(){
 		inOrderTraverse(root);
 	}
@@ -87,7 +87,7 @@ public class BalancedBinaryTree<T> {
 		}
 	}
 	
-	/**ºóĞòµİ¹é±éÀú¶ş²æÊ÷*/
+	/**ååºé€’å½’éå†äºŒå‰æ ‘*/
 	public void postOrderTraverse(){
 		postOrderTraverse(root);
 	}
@@ -100,7 +100,7 @@ public class BalancedBinaryTree<T> {
 	}
 	
 	/**
-	 * ÏÈĞò·µ»Ø½Úµã
+	 * å…ˆåºè¿”å›èŠ‚ç‚¹
 	 * @return List<Node<T>>
 	 */
 	public List<Node<T>> getPreOrderList(){
@@ -118,7 +118,7 @@ public class BalancedBinaryTree<T> {
 	}
 	
 	/**
-	 * ÖĞĞò·µ»Ø½Úµã
+	 * ä¸­åºè¿”å›èŠ‚ç‚¹
 	 * @return List<Node<T>>
 	 */
 	public List<Node<T>> getPostOrderList(){
@@ -136,7 +136,7 @@ public class BalancedBinaryTree<T> {
 	}
 	
 	/**
-	 * ºóĞò·µ»Ø½Úµã
+	 * ååºè¿”å›èŠ‚ç‚¹
 	 * @return List<Node<T>>
 	 */
 	public List<Node<T>> getInOrderList(){
@@ -155,7 +155,7 @@ public class BalancedBinaryTree<T> {
 	}
 	
 	/**
-	 * ·µ»Ø½ÚµãÊı
+	 * è¿”å›èŠ‚ç‚¹æ•°
 	 * @param args
 	 */
 	public int size(){
@@ -185,7 +185,7 @@ public class BalancedBinaryTree<T> {
 		//tree.preOrderTraverse();
 		//tree.inOrderTraverse();
 		//tree.postOrderTraverse();
-		/*²âÊÔ popMin()
+		/*æµ‹è¯• popMin()
 		node=tree.popMin();
 		node=tree.popMin();
 		node=tree.popMin();
@@ -196,7 +196,7 @@ public class BalancedBinaryTree<T> {
 		tree.preOrderTraverse();
 		*/
 		
-		/*²âÊÔ popMax()
+		/*æµ‹è¯• popMax()
 		node=tree.popMax();
 		node=tree.popMax();
 		node=tree.popMax();
@@ -220,7 +220,7 @@ public class BalancedBinaryTree<T> {
 		//node=tree.popMax();
 		//node=tree.popMax();
 		
-		/* ²âÊÔ±éÀúµÃµ½List */
+		/* æµ‹è¯•éå†å¾—åˆ°List */
 		List<Node<Integer>> list;
 		
 		list=tree.getPreOrderList();
@@ -228,29 +228,29 @@ public class BalancedBinaryTree<T> {
 		//list=tree.getPostOrderList();
 		
 		/*
-		 * Á¿²âÊÔ
+		 * é‡æµ‹è¯•
 		 */
 		
 		
 		/*
-		System.out.print("ÏÈĞò±éÀú\n");
+		System.out.print("å…ˆåºéå†\n");
 		for(Node<Integer> item:list){
-			System.out.print("ÔªËØÖµ:"+item.getValue()+" ²ã¼¶:"+item.getLevel());
-			System.out.print(" ×ó×ÓÊ÷Éî¶È:"+item.getLeftDeepestLevel()+" ÓÒ×ÓÊ÷Éî¶È:"+item.getRightDeepestLevel());
+			System.out.print("å…ƒç´ å€¼:"+item.getValue()+" å±‚çº§:"+item.getLevel());
+			System.out.print(" å·¦å­æ ‘æ·±åº¦:"+item.getLeftDeepestLevel()+" å³å­æ ‘æ·±åº¦:"+item.getRightDeepestLevel());
 			System.out.print("\n");
 		}
 		*/
 		
 		//tree.preOrderTraverse();
 		
-		/* ²âÊÔsize()
+		/* æµ‹è¯•size()
 		tree.popMax();
 		tree.popMax();
 		System.out.println(tree.size());
 		*/
 		
 		/*
-		//Õ»Òç³ö²âÊÔ
+		//æ ˆæº¢å‡ºæµ‹è¯•
 		int i=0;
 		BalancedBinaryTree<Double> tree2=new BalancedBinaryTree<Double>();
 		try{
@@ -260,7 +260,7 @@ public class BalancedBinaryTree<T> {
 				System.out.println(i);
 			}
 		}catch(Exception e){
-			System.out.println(i+"¸ö½ÚµãºóÕ»Òç³ö");
+			System.out.println(i+"ä¸ªèŠ‚ç‚¹åæ ˆæº¢å‡º");
 		}
 		*/
 		
@@ -274,10 +274,10 @@ public class BalancedBinaryTree<T> {
 		
 		list2=tree2.getPreOrderList();
 		
-		System.out.print("ÏÈĞò±éÀú\n");
+		System.out.print("å…ˆåºéå†\n");
 		for(Node<Integer> item:list2){
-			System.out.print("ÔªËØÖµ:"+item.getValue()+" ²ã¼¶:"+item.getLevel());
-			System.out.print(" ×ó×ÓÊ÷Éî¶È:"+item.getLeftDeepestLevel()+" ÓÒ×ÓÊ÷Éî¶È:"+item.getRightDeepestLevel());
+			System.out.print("å…ƒç´ å€¼:"+item.getValue()+" å±‚çº§:"+item.getLevel());
+			System.out.print(" å·¦å­æ ‘æ·±åº¦:"+item.getLeftDeepestLevel()+" å³å­æ ‘æ·±åº¦:"+item.getRightDeepestLevel());
 			System.out.print("\n");
 		}
 	}

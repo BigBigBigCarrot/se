@@ -1,8 +1,8 @@
 package com.david.utils;
 
-public class MyRandom//∞¥“™«Û≤˙…˙∏˜÷÷ÀÊª˙ ˝°¢ÀÊª˙ ˝◊Èµƒ¿‡
+public class MyRandom//ÊåâË¶ÅÊ±Ç‰∫ßÁîüÂêÑÁßçÈöèÊú∫Êï∞„ÄÅÈöèÊú∫Êï∞ÁªÑÁöÑÁ±ª
 {
-	public static int getARandomNumber(int smallestNum,int largestNum)//≤˙…˙“ª∏ˆ>=smallestNum«“<=largestNumµƒÀÊª˙ ˝
+	public static int getARandomNumber(int smallestNum,int largestNum)//‰∫ßÁîü‰∏Ä‰∏™>=smallestNum‰∏î<=largestNumÁöÑÈöèÊú∫Êï∞
 	{
 		int number;
 		
@@ -11,26 +11,26 @@ public class MyRandom//∞¥“™«Û≤˙…˙∏˜÷÷ÀÊª˙ ˝°¢ÀÊª˙ ˝◊Èµƒ¿‡
 		return number;
 	}
 	
-	public static int[] get_Non_repeated_1D_Array(int smallestNum,int largestNum,int arrayLength)//≤˙…˙“ª∏ˆ≤ª÷ÿ∏¥µƒint–Õ“ªŒ¨ ˝◊È£¨«∞¡Ω∏ˆ≤Œ ˝÷∏∂® ˝÷µµƒ±’«¯º‰£¨◊Ó∫Û“ª÷∏∂® ˝◊È≥§∂»
+	public static int[] get_Non_repeated_1D_Array(int smallestNum,int largestNum,int arrayLength)//‰∫ßÁîü‰∏Ä‰∏™‰∏çÈáçÂ§çÁöÑintÂûã‰∏ÄÁª¥Êï∞ÁªÑÔºåÂâç‰∏§‰∏™ÂèÇÊï∞ÊåáÂÆöÊï∞ÂÄºÁöÑÈó≠Âå∫Èó¥ÔºåÊúÄÂêé‰∏ÄÊåáÂÆöÊï∞ÁªÑÈïøÂ∫¶
 	{
-		int[] randomArray;//◊Ó÷’“™∑µªÿµƒ ˝◊È
-		int[] naturalArray;//∞¸∫¨∏√±’«¯º‰µƒÀ˘”–◊‘»ª ˝µƒ ˝◊È
-		int colsedIntervalLength;//±’«¯º‰≥§∂»
+		int[] randomArray;//ÊúÄÁªàË¶ÅËøîÂõûÁöÑÊï∞ÁªÑ
+		int[] naturalArray;//ÂåÖÂê´ËØ•Èó≠Âå∫Èó¥ÁöÑÊâÄÊúâËá™ÁÑ∂Êï∞ÁöÑÊï∞ÁªÑ
+		int colsedIntervalLength;//Èó≠Âå∫Èó¥ÈïøÂ∫¶
 		
 		colsedIntervalLength=largestNum-smallestNum+1;
 		randomArray=new int[arrayLength];
-		naturalArray=new int[colsedIntervalLength];//∏√±’«¯º‰µƒÀ˘”–◊‘»ª ˝
+		naturalArray=new int[colsedIntervalLength];//ËØ•Èó≠Âå∫Èó¥ÁöÑÊâÄÊúâËá™ÁÑ∂Êï∞
 		
-		if(colsedIntervalLength<arrayLength)//±’«¯º‰÷–µƒ◊‘»ª ˝≤ª◊„“‘≤˙…˙length∏ˆ≤ª÷ÿ∏¥µƒ ˝◊÷ ±£¨∑µªÿÀ˘”–‘™Àÿæ˘Œ™¡„µƒ ˝◊È
+		if(colsedIntervalLength<arrayLength)//Èó≠Âå∫Èó¥‰∏≠ÁöÑËá™ÁÑ∂Êï∞‰∏çË∂≥‰ª•‰∫ßÁîülength‰∏™‰∏çÈáçÂ§çÁöÑÊï∞Â≠óÊó∂ÔºåËøîÂõûÊâÄÊúâÂÖÉÁ¥†Âùá‰∏∫Èõ∂ÁöÑÊï∞ÁªÑ
 		{
-			return randomArray;//∑µªÿÀ˘”–‘™Àÿæ˘Œ™¡„µƒ ˝◊È
+			return randomArray;//ËøîÂõûÊâÄÊúâÂÖÉÁ¥†Âùá‰∏∫Èõ∂ÁöÑÊï∞ÁªÑ
 		}
 		else
 		{
-			int ergodic=smallestNum;//”√”⁄±È¿˙±’«¯º‰÷–µƒÀ˘”–◊‘»ª ˝µƒ±‰¡ø
+			int ergodic=smallestNum;//Áî®‰∫éÈÅçÂéÜÈó≠Âå∫Èó¥‰∏≠ÁöÑÊâÄÊúâËá™ÁÑ∂Êï∞ÁöÑÂèòÈáè
 			for(int i=0;i<=colsedIntervalLength-1;i++)
 			{
-				naturalArray[i]=ergodic;//Ω´∏√±’«¯º‰÷–µƒÀ˘”–◊‘»ª ˝¥”–°µΩ¥Û“¿¥Œº«¬º”Î ˝◊È÷–
+				naturalArray[i]=ergodic;//Â∞ÜËØ•Èó≠Âå∫Èó¥‰∏≠ÁöÑÊâÄÊúâËá™ÁÑ∂Êï∞‰ªéÂ∞èÂà∞Â§ß‰æùÊ¨°ËÆ∞ÂΩï‰∏éÊï∞ÁªÑ‰∏≠
 				ergodic++;
 				//System.out.println(naturalArry[i]);
 			}
@@ -43,20 +43,20 @@ public class MyRandom//∞¥“™«Û≤˙…˙∏˜÷÷ÀÊª˙ ˝°¢ÀÊª˙ ˝◊Èµƒ¿‡
 			arrayIndex=(int)(Math.random()*rRange);
 			rRange--;
 			randomArray[i]=naturalArray[arrayIndex];
-			naturalArray[arrayIndex]=naturalArray[rRange];//Ω´“—æ≠—°÷–µƒ ˝≈≈µΩarrayIndex ˝◊Èµƒ∫Û√Ê£¨÷Æ∫ÛµƒÀÊª˙≤ª‘⁄—°‘Ò∏√ ˝
+			naturalArray[arrayIndex]=naturalArray[rRange];//Â∞ÜÂ∑≤ÁªèÈÄâ‰∏≠ÁöÑÊï∞ÊéíÂà∞arrayIndexÊï∞ÁªÑÁöÑÂêéÈù¢Ôºå‰πãÂêéÁöÑÈöèÊú∫‰∏çÂú®ÈÄâÊã©ËØ•Êï∞
 		}
 		return randomArray;
 	}
 	
-	public static int[][] get_Non_repeated_2D_Array(int smallestNum,int largestNum,int n,int m)//≤˙…˙“ª∏ˆ≤ª÷ÿ∏¥µƒint–Õ∂˛Œ¨n*mæÿ’Û
+	public static int[][] get_Non_repeated_2D_Array(int smallestNum,int largestNum,int n,int m)//‰∫ßÁîü‰∏Ä‰∏™‰∏çÈáçÂ§çÁöÑintÂûã‰∫åÁª¥n*mÁü©Èòµ
 	{
 		int[][] matrix;
 		int[] array;
-		int tempArraryIndex;//”√”⁄±È¿˙“ªŒ¨ ˝◊È÷–µƒ√ø“ª∏ˆœ¬±Í
+		int tempArraryIndex;//Áî®‰∫éÈÅçÂéÜ‰∏ÄÁª¥Êï∞ÁªÑ‰∏≠ÁöÑÊØè‰∏Ä‰∏™‰∏ãÊ†á
 		matrix=new int[n][m];
 		tempArraryIndex=0;
 		
-		array=get_Non_repeated_1D_Array(smallestNum,largestNum,n*m);//ªÒ»°“ª∏ˆ‘⁄÷∏∂®«¯º‰«“÷∏∂®≥§∂»µƒ“ªŒ¨ ˝◊È
+		array=get_Non_repeated_1D_Array(smallestNum,largestNum,n*m);//Ëé∑Âèñ‰∏Ä‰∏™Âú®ÊåáÂÆöÂå∫Èó¥‰∏îÊåáÂÆöÈïøÂ∫¶ÁöÑ‰∏ÄÁª¥Êï∞ÁªÑ
 		for(int i=0;i<=matrix.length-1;i++)
 		{
 			for(int j=0;j<=matrix[0].length-1;j++)
@@ -66,10 +66,10 @@ public class MyRandom//∞¥“™«Û≤˙…˙∏˜÷÷ÀÊª˙ ˝°¢ÀÊª˙ ˝◊Èµƒ¿‡
 			}
 		}
 		return matrix;
-		//±’«¯º‰÷–µƒ◊‘»ª ˝≤ª◊„“‘≤˙…˙n*m∏ˆ≤ª÷ÿ∏¥µƒ ˝◊÷ ±£¨∑µªÿÀ˘”–‘™Àÿæ˘Œ™¡„µƒæÿ’Û
+		//Èó≠Âå∫Èó¥‰∏≠ÁöÑËá™ÁÑ∂Êï∞‰∏çË∂≥‰ª•‰∫ßÁîün*m‰∏™‰∏çÈáçÂ§çÁöÑÊï∞Â≠óÊó∂ÔºåËøîÂõûÊâÄÊúâÂÖÉÁ¥†Âùá‰∏∫Èõ∂ÁöÑÁü©Èòµ
 	}
 	
-	public static int random(int smallestNum,int largestNum)//≤˙…˙÷∏∂®«¯º‰ƒ⁄µƒ»Œ“‚“ª∏ˆ◊‘»ª ˝
+	public static int random(int smallestNum,int largestNum)//‰∫ßÁîüÊåáÂÆöÂå∫Èó¥ÂÜÖÁöÑ‰ªªÊÑè‰∏Ä‰∏™Ëá™ÁÑ∂Êï∞
 	{
 		int random;
 		random=(int)(Math.random()*(largestNum+1-smallestNum));
@@ -78,7 +78,7 @@ public class MyRandom//∞¥“™«Û≤˙…˙∏˜÷÷ÀÊª˙ ˝°¢ÀÊª˙ ˝◊Èµƒ¿‡
 		return random;
 	}
 	
-	public static int[] get_1D_Array(int smallestNum,int largestNum,int arrayLength)//≤˙…˙“ª∏ˆø…÷ÿ∏¥µƒint–Õ“ªŒ¨ ˝◊È£¨«∞¡Ω∏ˆ≤Œ ˝÷∏∂® ˝÷µµƒ±’«¯º‰£¨◊Ó∫Û“ª÷∏∂® ˝◊È≥§∂»
+	public static int[] get_1D_Array(int smallestNum,int largestNum,int arrayLength)//‰∫ßÁîü‰∏Ä‰∏™ÂèØÈáçÂ§çÁöÑintÂûã‰∏ÄÁª¥Êï∞ÁªÑÔºåÂâç‰∏§‰∏™ÂèÇÊï∞ÊåáÂÆöÊï∞ÂÄºÁöÑÈó≠Âå∫Èó¥ÔºåÊúÄÂêé‰∏ÄÊåáÂÆöÊï∞ÁªÑÈïøÂ∫¶
 	{
 		int[] array;
 		array=new int[arrayLength];
@@ -92,7 +92,7 @@ public class MyRandom//∞¥“™«Û≤˙…˙∏˜÷÷ÀÊª˙ ˝°¢ÀÊª˙ ˝◊Èµƒ¿‡
 	}
 	public static void main(String[] agrs)
 	{
-		/* ≤‚ ‘non_repeated_1D_Array∑Ω∑®
+		/* ÊµãËØïnon_repeated_1D_ArrayÊñπÊ≥ï
 		int[] a;
 		a=MyRandom.non_repeated_1D_Array(-9,9,10);
 		for(int i=0;i<=a.length-1;i++)
@@ -102,7 +102,7 @@ public class MyRandom//∞¥“™«Û≤˙…˙∏˜÷÷ÀÊª˙ ˝°¢ÀÊª˙ ˝◊Èµƒ¿‡
 		*/
 		//System.out.println("OK");
 		
-		/*≤‚ ‘ÀÊª˙æÿ’Û
+		/*ÊµãËØïÈöèÊú∫Áü©Èòµ
 		int[][] matrix;
 		matrix=MyRandom.non_repeated_2D_Array(1,16,4,4);
 		
@@ -116,7 +116,7 @@ public class MyRandom//∞¥“™«Û≤˙…˙∏˜÷÷ÀÊª˙ ˝°¢ÀÊª˙ ˝◊Èµƒ¿‡
 		}
 		*/
 		
-		//≤‚ ‘‘⁄∏¯∂®µƒ«¯º‰÷–≤˙…˙“ª∏ˆÀÊª˙ ˝
+		//ÊµãËØïÂú®ÁªôÂÆöÁöÑÂå∫Èó¥‰∏≠‰∫ßÁîü‰∏Ä‰∏™ÈöèÊú∫Êï∞
 		/*
 		for(int i=0;i<=100;i++)
 		{

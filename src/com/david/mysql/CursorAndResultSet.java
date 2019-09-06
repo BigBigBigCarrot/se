@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 /**
- *	Àı×Ó£º»ñÈ¡¹ı³ÌµÄ½á¹û¼¯
+ *	ä¾‹å­ï¼šè·å–è¿‡ç¨‹çš„ç»“æœé›†
  */
 public class CursorAndResultSet {
 
@@ -18,9 +18,9 @@ public class CursorAndResultSet {
 		String sql="call p_resultset_test(); ";
 		
 		/*
-		//»ñÈ¡µ¥¸ö½á¹û¼¯
+		//è·å–å•ä¸ªç»“æœé›†
 		preparedStatement=connection.prepareStatement(sql);
-		resultSet=preparedStatement.executeQuery();//Ö´ĞĞÓï¾ä£¬µÃµ½½á¹û¼¯
+		resultSet=preparedStatement.executeQuery();//æ‰§è¡Œè¯­å¥ï¼Œå¾—åˆ°ç»“æœé›†
 	
 		while (resultSet.next()) {  
             String column1 = resultSet.getString(1);  
@@ -29,10 +29,10 @@ public class CursorAndResultSet {
             String column4 = resultSet.getString(4); 
             String column5 = resultSet.getString(5);
             System.out.println(column1 + "\t" + column2 + "\t" + column3 + "\t" + column4 + "\t" +column5);  
-        }//ÏÔÊ¾Êı¾İ 
+        }//æ˜¾ç¤ºæ•°æ® 
 		*/
 		
-		//»ñÈ¡¶à¸ö½á¹û¼¯ 
+		//è·å–å¤šä¸ªç»“æœé›† 
 		//sql="{call p_resultset_test()} ";
 		sql="{call p_temp_table_test()} ";
 		CallableStatement cs=connection.prepareCall(sql);
@@ -46,13 +46,13 @@ public class CursorAndResultSet {
 	            String column4 = resultSet.getString(4); 
 	            String column5 = resultSet.getString(5);
 	            System.out.println(column1 + "\t" + column2 + "\t" + column3 + "\t" + column4 + "\t" +column5);  
-	        }//ÏÔÊ¾Êı¾İ 
+	        }//æ˜¾ç¤ºæ•°æ® 
 		}
 		
 		
-		hadResults = cs.getMoreResults(); //¼ì²éÊÇ·ñ´æÔÚÏÂÒ»¸ö½á¹û¼¯ 
+		hadResults = cs.getMoreResults(); //æ£€æŸ¥æ˜¯å¦å­˜åœ¨ä¸‹ä¸€ä¸ªç»“æœé›† 
 		if(hadResults&&cs.getResultSet()!=null){
-			System.out.println("-------------------µÚ¶ş×é½á¹û¼¯--------------------");  
+			System.out.println("-------------------ç¬¬äºŒç»„ç»“æœé›†--------------------");  
 			resultSet = cs.getResultSet();
 			while (resultSet.next()) {  
 	            String column1 = resultSet.getString(1);
@@ -61,7 +61,7 @@ public class CursorAndResultSet {
 	            String column4 = resultSet.getString(4); 
 	            String column5 = resultSet.getString(5);
 	            System.out.println(column1 + "\t" + column2 + "\t" + column3 + "\t" + column4 + "\t" +column5);  
-	        }//ÏÔÊ¾Êı¾İ 
+	        }//æ˜¾ç¤ºæ•°æ® 
 		}
 	      
 		resultSet.close();

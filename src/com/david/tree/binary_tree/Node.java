@@ -19,21 +19,21 @@ public class Node<T> implements Comparable{
 	}
 	
 	/**
-	 * Ğ¡ÓÚÔÚ¸¸½ÚµãµÄÔÚ×ó£¬´óÓÚµÈÓÚ¸¸½ÚµãµÄÔÚÓÒ
-	 * @param node ÒªÌí¼ÓµÄ½Úµã
+	 * å°äºåœ¨çˆ¶èŠ‚ç‚¹çš„åœ¨å·¦ï¼Œå¤§äºç­‰äºçˆ¶èŠ‚ç‚¹çš„åœ¨å³
+	 * @param node è¦æ·»åŠ çš„èŠ‚ç‚¹
 	 */
 	public void add(Node<T> node){
-		if(node.compareTo(this)==-1){//ÒªÌí¼ÓµÄ½ÚµãµÄÖµĞ¡ÓÚµ±Ç°½ÚµãµÄÖµ
-			if(this.left!=null){//×ó×Ó½Úµã²»Îª¿Õ
+		if(node.compareTo(this)==-1){//è¦æ·»åŠ çš„èŠ‚ç‚¹çš„å€¼å°äºå½“å‰èŠ‚ç‚¹çš„å€¼
+			if(this.left!=null){//å·¦å­èŠ‚ç‚¹ä¸ä¸ºç©º
 				this.left.add(node);
-			}else{//×ó×Ó½ÚµãÎª¿Õ
+			}else{//å·¦å­èŠ‚ç‚¹ä¸ºç©º
 				this.left=node;
 				node.father=this;
 			}
-		}else{//ÒªÌí¼ÓµÄ½ÚµãµÄÖµ´óÓÚµÈÓÚµ±Ç°½ÚµãµÄÖµ
-			if(this.right!=null){//×ó×Ó½Úµã²»Îª¿Õ
+		}else{//è¦æ·»åŠ çš„èŠ‚ç‚¹çš„å€¼å¤§äºç­‰äºå½“å‰èŠ‚ç‚¹çš„å€¼
+			if(this.right!=null){//å·¦å­èŠ‚ç‚¹ä¸ä¸ºç©º
 				this.right.add(node);
-			}else{//×ó×Ó½ÚµãÎª¿Õ
+			}else{//å·¦å­èŠ‚ç‚¹ä¸ºç©º
 				this.right=node;
 				node.father=this;
 			}
@@ -42,20 +42,20 @@ public class Node<T> implements Comparable{
 	
 	public Node<T> popMin(){
 		Node<T> minNode=null;
-		if(this.left==null){//Ã»ÓĞ×ó×Ó½Úµã
+		if(this.left==null){//æ²¡æœ‰å·¦å­èŠ‚ç‚¹
 			minNode=this;
-			//System.out.println("µ±Ç°µ¯³öµÄ½ÚµãµÄÖµÎª£º"+minNode.getValue());
+			//System.out.println("å½“å‰å¼¹å‡ºçš„èŠ‚ç‚¹çš„å€¼ä¸ºï¼š"+minNode.getValue());
 			if(minNode.father!=null){
-				if(minNode.right==null){//Ã»ÓĞÓÒ×Ó½Úµã
+				if(minNode.right==null){//æ²¡æœ‰å³å­èŠ‚ç‚¹
 					minNode.father.setLeft(null);
-					//System.out.println("µ±Ç°µ¯³öµÄ½ÚµãÃ»ÓĞÓÒ×Ó½Úµã£¬ÉèÖÃµ¯³ö½ÚµãµÄ¸¸½ÚµãµÄ×ó×Ó½ÚµãÎªnull,¸¸½ÚµãµÄÖµÎª:"+minNode.getFather().getValue());
-				}else{//ÓĞÓÒ×Ó½Úµã
+					//System.out.println("å½“å‰å¼¹å‡ºçš„èŠ‚ç‚¹æ²¡æœ‰å³å­èŠ‚ç‚¹ï¼Œè®¾ç½®å¼¹å‡ºèŠ‚ç‚¹çš„çˆ¶èŠ‚ç‚¹çš„å·¦å­èŠ‚ç‚¹ä¸ºnull,çˆ¶èŠ‚ç‚¹çš„å€¼ä¸º:"+minNode.getFather().getValue());
+				}else{//æœ‰å³å­èŠ‚ç‚¹
 					this.father.setLeft(this.right);
 					this.right.setFather(this.father);
-					//System.out.println("µ±Ç°µ¯³öµÄ½ÚµãÓĞÓÒ×Ó½Úµã");
+					//System.out.println("å½“å‰å¼¹å‡ºçš„èŠ‚ç‚¹æœ‰å³å­èŠ‚ç‚¹");
 				}
 			}
-		}else{//ÓĞ×ó×Ó½Úµã
+		}else{//æœ‰å·¦å­èŠ‚ç‚¹
 			minNode=this.left.popMin();
 		}
 		return minNode;
@@ -63,20 +63,20 @@ public class Node<T> implements Comparable{
 	
 	public Node<T> popMax(){
 		Node<T> maxNode=null;
-		if(this.right==null){//Ã»ÓĞÓÒ×Ó½Úµã
+		if(this.right==null){//æ²¡æœ‰å³å­èŠ‚ç‚¹
 			maxNode=this;
-			//System.out.println("µ±Ç°µ¯³öµÄ½ÚµãµÄÖµÎª£º"+maxNode.getValue());
+			//System.out.println("å½“å‰å¼¹å‡ºçš„èŠ‚ç‚¹çš„å€¼ä¸ºï¼š"+maxNode.getValue());
 			if(maxNode.father!=null){
-				if(maxNode.left==null){//Ã»ÓĞ×ó×Ó½Úµã
+				if(maxNode.left==null){//æ²¡æœ‰å·¦å­èŠ‚ç‚¹
 					maxNode.father.setRight(null);
-					//System.out.println("µ±Ç°µ¯³öµÄ½ÚµãÃ»ÓĞ×ó×Ó½Úµã£¬ÉèÖÃµ¯³ö½ÚµãµÄ¸¸½ÚµãµÄÓÒ×Ó½ÚµãÎªnull,¸¸½ÚµãµÄÖµÎª:"+maxNode.getFather().getValue());
-				}else{//ÓĞ×ó×Ó½Úµã
+					//System.out.println("å½“å‰å¼¹å‡ºçš„èŠ‚ç‚¹æ²¡æœ‰å·¦å­èŠ‚ç‚¹ï¼Œè®¾ç½®å¼¹å‡ºèŠ‚ç‚¹çš„çˆ¶èŠ‚ç‚¹çš„å³å­èŠ‚ç‚¹ä¸ºnull,çˆ¶èŠ‚ç‚¹çš„å€¼ä¸º:"+maxNode.getFather().getValue());
+				}else{//æœ‰å·¦å­èŠ‚ç‚¹
 					this.father.setRight(this.left);
 					this.left.setFather(this.father);
-					//System.out.println("µ±Ç°µ¯³öµÄ½ÚµãÓĞÓÒ×Ó½Úµã");
+					//System.out.println("å½“å‰å¼¹å‡ºçš„èŠ‚ç‚¹æœ‰å³å­èŠ‚ç‚¹");
 				}
 			}
-		}else{//ÓĞÓÒ×Ó½Úµã
+		}else{//æœ‰å³å­èŠ‚ç‚¹
 			maxNode=this.right.popMax();
 		}
 		return maxNode;
