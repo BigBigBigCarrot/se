@@ -6,4 +6,4 @@ javase练习
 需要下载这个jar在指定目录或修改对应的配置，
 也可以在项目properties-java build path里面直接删除这个配置。
 （如果同步项目到github且没有过滤编译文件.class，则class文件直接上传上去，
-Import的时候没有配mariaDB的jar，会不编译直接运行从github上import下来的class）
+Import的时候没有配mariaDB的jar，会不编译而是直接运行从github上import下来的class）
