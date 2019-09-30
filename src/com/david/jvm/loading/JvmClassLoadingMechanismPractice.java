@@ -2,7 +2,7 @@ package com.david.jvm.loading;
 
 /**
  * 
- * @Description: 虚拟机的类加载机制
+ * 虚拟机的类加载机制
  * 类加载到虚拟机的步骤、生命周期：
  * 	加载->验证->准备->解析(resolution)->初始化->使用->卸载
  * [验证->准备->解析]统称为linking

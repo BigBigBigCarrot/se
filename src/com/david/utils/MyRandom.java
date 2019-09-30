@@ -1,6 +1,10 @@
 package com.david.utils;
-
-public class MyRandom//按要求产生各种随机数、随机数组的类
+/**
+ * 按要求产生各种随机数、随机数组的工具类
+ * @author Administrator
+ *
+ */
+public class MyRandom
 {
 	public static int getARandomNumber(int smallestNum,int largestNum)//产生一个>=smallestNum且<=largestNum的随机数
 	{

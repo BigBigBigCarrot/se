@@ -173,7 +173,7 @@ public class BinaryTree<T> {
 			tree.add(node);
 		}
 		
-		//tree.preOrderTraverse();
+		tree.preOrderTraverse();
 		//tree.inOrderTraverse();
 		//tree.postOrderTraverse();
 		/*测试 popMin()
@@ -222,17 +222,17 @@ public class BinaryTree<T> {
 		*/
 		
 		//栈溢出测试
-		int i=0;
-		BinaryTree<Double> tree2=new BinaryTree<Double>();
-		try{
-			while(true){
-				i++;
-				tree2.add(new Node(Math.random()));
-				System.out.println(i);
-			}
-		}catch(Exception e){
-			System.out.println(i+"个节点后栈溢出");
-		}
+//		int i=0;
+//		BinaryTree<Double> tree2=new BinaryTree<Double>();
+//		try{
+//			while(true){
+//				i++;
+//				tree2.add(new Node(Math.random()));
+//				System.out.println(i);
+//			}
+//		}catch(Exception e){
+//			System.out.println(i+"个节点后栈溢出");
+//		}
 		
 	}
 }
