@@ -1,5 +1,4 @@
 # javase-practice
-javase-practice
 javase练习
 本项目 添加了一个external jar(mariaDB的jar，用于mysql学习部分的代码)，
 如果Import项目后eclipse找不到对应jar则项目会无法编译和运行，
