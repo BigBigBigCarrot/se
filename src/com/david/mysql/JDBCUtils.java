@@ -17,7 +17,7 @@ public class JDBCUtils {
 	public static final String url="jdbc:mysql://localhost/caiming";
 	public static final String name = "org.mariadb.jdbc.Driver";  
 	public static final String user = "root";  
-    public static final String password = "root";
+    public static final String password = "123";
     
     private static Connection connection = null;  
     
@@ -27,7 +27,7 @@ public class JDBCUtils {
     	}
     	try{
     		Class.forName(name);
-    		connection = DriverManager.getConnection(url, user, password);//»ñÈ¡Á¬½Ó 
+    		connection = DriverManager.getConnection(url, user, password);//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ 
 		}catch (Exception e) {
 			System.out.println(e.toString());
 			e.printStackTrace();
