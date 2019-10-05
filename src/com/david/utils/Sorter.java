@@ -276,6 +276,56 @@ public class Sorter {
 		}
 		System.out.println("print end");
 	}
+	
+	/**
+	 * 
+	 * @param a
+	 * @param low 待排序的有序表的起始元素数组下标
+	 * @param high 待排序的有序表的终止元素数组下标
+	 */
+	public static void mergeSort(int a[],int low,int high){
+		if(low<high){
+			int mid=(low+high)/2;
+
+			mergeSort(a,low,mid);
+			mergeSort(a,mid+1,high);
+
+			merge(a,low,mid,high);
+		}
+	}
+	
+	/**
+	 * 合并两张表（又成为归并段），其中表1（归并段1）为a[low]到a[mid]，表2（归并段2）为a[mid+1]到a[high]，
+	 * @param a 
+	 * @param low
+	 * @param mid
+	 * @param high
+	 */
+	private static void merge(int a[],int low,int mid,int high){
+		int[] b=new int[a.length];
+		int i,j,k;
+		//将要归并的两张表复制到辅助数组B中
+		for(k=low;k<=high;k++){
+			b[k]=a[k];
+		}
+
+		for(i=low,j=mid+1,k=low;i<=mid&&j<=high;k++){//i和k均从表1的第一个元素开始，
+				//k每轮循环后向后指向下一位，i不超过表1，
+				//j从表2的第一个元素开始
+			if(b[i]<=b[j]){
+				a[k]=b[i++];
+				//等价于a[k]=b[i];i++;
+			}else{
+				a[k]=a[j++];
+			}
+		}
+		while(i<=mid){
+			a[k++]=b[i++];
+		}
+		while(j<=high){
+			a[k++]=b[j++];
+		}
+	}
 
 	public static void main(String[] args) {
 //		//geneart a random a
@@ -302,7 +352,8 @@ public class Sorter {
 //		bubbleSort(a);
 //		selectionSort(a);
 //		quickSort(a, 0, a.length - 1);
-		heapSort(a);
+//		heapSort(a);
+		mergeSort(a,0,a.length-1);
 		printArray(a);
 
 	}
