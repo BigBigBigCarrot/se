@@ -131,7 +131,10 @@ public class Node<T> implements Comparable{
 		return -2;
 	}
 	
-	public static void main(String[] args) {
+	/**
+	 * a method for test
+	 */
+	private static void test1() {
 		Node<BigDecimal> root=new Node<BigDecimal>();
 		root.setValue(new BigDecimal(1.0));
 		
@@ -148,10 +151,13 @@ public class Node<T> implements Comparable{
 		root.add(node2);
 		root.add(node3);
 		
-		System.out.println(root.getLeft());
-		System.out.println(root.getRight());
-		System.out.println(root.getRight().getRight());
-		
+		System.out.println(root.getLeft().getValue());
+		System.out.println(root.getRight().getValue());
+		System.out.println(root.getRight().getRight().getValue());
+	}
+	
+	public static void main(String[] args) {
+		test1();
 	}
 	
 }
