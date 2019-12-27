@@ -3,7 +3,7 @@ package com.david.thread;
 class Thread3 extends Thread{
 	private int count=5;
 	public Thread3(String name) {
-		this.setName(name);//Thread中自带name
+		this.setName(name);
 	}
 	
 	public void run() {
@@ -20,10 +20,6 @@ class Thread3 extends Thread{
 
 class Thread4 implements Runnable{
 	private int count=5;
-//	private String name;
-//	public Thread4(String name) {
-//		this.name=name;
-//	}
 	
 	public void run() {
 		for (int i = 0; i < 5; i++) {
