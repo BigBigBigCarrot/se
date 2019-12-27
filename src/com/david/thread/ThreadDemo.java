@@ -1,14 +1,19 @@
 package com.david.thread;
 
 class MyThread2 extends Thread { // 继承Thread类，作为线程的实现类
-
+	private int count=5;
 	public MyThread2(String name) {
 		setName(name); // 通过构造方法配置name属性
 	}
 
 	public void run() { // 覆写run()方法，作为线程 的操作主体
-		for (int i = 0; i < 10; i++) {
-			System.out.println(Thread.currentThread().getName() + "运行，i = " + i);
+		for (int i = 0; i < 5; i++) {
+			System.out.println(this.getName()+"运行 count="+count--);
+			try {
+				sleep((int)Math.random()*10);
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }
