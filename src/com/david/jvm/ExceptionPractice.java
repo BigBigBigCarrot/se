@@ -7,7 +7,7 @@ public class ExceptionPractice {
 	}
 
 	public static void main(String[] args) {
-//		System.out.println(f());
+		System.out.println(f());
 		f2();
 	}
 	
@@ -27,6 +27,7 @@ public class ExceptionPractice {
 			
 			return x;
 		}catch(NullPointerException e){
+			System.out.println("execute the catch bolck");
 			x=2;
 			return x;
 		}
@@ -45,6 +46,11 @@ public class ExceptionPractice {
 	public static void f2()throws ArrayIndexOutOfBoundsException{
 		int[] a={1};
 		a[1]++;
+		/**
+		 * 如果有catch中对应的异常被抛出，则先执行catch，然后再执行finally
+		 * 不管有没有执行catch，finally都会在最后被执行
+		 * finally后面的代码不会被执行
+		 */
 	}
 
 }

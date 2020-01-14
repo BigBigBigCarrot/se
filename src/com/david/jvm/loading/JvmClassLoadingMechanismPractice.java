@@ -23,7 +23,7 @@ public class JvmClassLoadingMechanismPractice
 
 	static
 	{
-		System.out.println("BracePractice static{1}");
+		System.out.println("BracePractice static{2}");
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class JvmClassLoadingMechanismPractice
 //		classA=new ClassA();//首次new 一个ClassA的实例，初始化ClassA这个类，触发static语句块，且先于构造函数执行;
 //		classA=new ClassA();//第二次new 一个ClassA的实例，ClassA的信息此前已被初始化，故此时不再触发static语句块
 		{}//需要加载一个类，且这个类的父类尚未初始化时，会初始化父类
-		ClassA[] arrayA=ClassA.arrayA;//触发static语句块
+		ClassA[] arrayA=ClassA.arrayA;//触发ClassA中的static语句块
 	}
 	
 
