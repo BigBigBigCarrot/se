@@ -1,12 +1,16 @@
 package com.david.collection;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Main {
 
@@ -42,6 +46,17 @@ public class Main {
 		String v;
 		v=map.put("key1", "value1.1");
 		System.out.println(v);
+	}
+	
+	public static void collectionPractice(){
+		Collection collection;
+	}
+	
+	public static void setPractice(){
+		Set set1,set2,set3;
+		set1=new HashSet();
+		set1=new LinkedHashSet();
+		set1=new TreeSet();
 	}
 	
 	
