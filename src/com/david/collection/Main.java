@@ -58,7 +58,10 @@ public class Main {
 		set1=new LinkedHashSet();
 		set1=new TreeSet();
 	}
-	
+
+	public static void collectionsPractice(){
+		Collections collections;
+	}
 	
 
 }

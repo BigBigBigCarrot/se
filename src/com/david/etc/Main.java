@@ -1,5 +1,10 @@
 package com.david.etc;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 import com.david.vo.Student;
 
 
@@ -11,7 +16,8 @@ public class Main {
 //		f3();
 //		f4();
 //		f7();
-		f8();
+//		f8();
+		comparatorPractice();
 	}
 	
 	/**
@@ -90,4 +96,19 @@ public class Main {
 		System.out.println(qualifiedName.replace(".", "/"));
 	}
 	
+	public static void comparatorPractice() {
+		List<Integer> list=new ArrayList();
+		list.add(5);
+		list.add(3);
+		list.add(1);
+		list.add(2);
+		Collections.sort(list);//升序排列
+		
+		//降序排列
+		Comparator comparator=new Comparator<Integer>(){//匿名内部类
+			public int compare(Integer o1, Integer o2) {return -o1.compareTo(o2);}
+		};
+		list.sort(comparator);
+		System.out.println(list.toString());
+	}
 }

@@ -1,8 +1,8 @@
 package com.david.thread;
 
-class Thread3 extends Thread{//继承Thread类，作为线程的实现类
+class MyThread extends Thread{//继承Thread类，作为线程的实现类
 	private int count=5;
-	public Thread3(String name) {
+	public MyThread(String name) {
 		this.setName(name);//通过构造方法配置name属性
 	}
 	
@@ -18,7 +18,7 @@ class Thread3 extends Thread{//继承Thread类，作为线程的实现类
 	}
 }
 
-class MyRun2 implements Runnable{
+class MyRun implements Runnable{
 	private int count=5;
 	
 	public void run() {
@@ -37,14 +37,14 @@ public class ComparisionDemo {
 
 	public static void main(String[] args) {
 		//Thread demostration A和B的count无法共享
-//		Thread3 th1=new Thread3 ("A");
-//		Thread3 th2=new Thread3 ("B");
+//		MyThread th1=new MyThread ("A");
+//		MyThread th2=new MyThread ("B");
 //		th1.start();
 //		th2.start();
 		
 		//Runnable demostration 
 		//每个线程可以用同一个实例化对象来实现共享mr的内部变量，也可以用不同的实例化对象（不能实现共享mr的内部变量）
-		MyRun2 mr=new MyRun2();
+		MyRun mr=new MyRun();
 		new Thread(mr,"C").start();
 		new Thread(mr,"D").start();
 		new Thread(mr,"E").start();
