@@ -7,9 +7,9 @@ package com.david.thread;
  * @date 2020年1月16日
  * @version 
  */
-public class SellTicket4 {
+public class SynchronizedDemo4 {
 
-	public SellTicket4() {
+	public SynchronizedDemo4() {
 	}
 
 	public static void main(String[] args) {

@@ -8,7 +8,7 @@ package com.david.thread;
  * @date 2020年1月16日
  * @version 
  */
-public class SellTicket1 {
+public class SynchronizedDemo1 {
 
 	public static void main(String[] args) {
 		Window window=new Window();
