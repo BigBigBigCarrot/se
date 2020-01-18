@@ -40,9 +40,10 @@ class Seller implements Runnable {
 					e.printStackTrace();
 				}
 				LockDemo.reentrantLock.unlock();
-			}else {
-				break;
+				continue;
 			}
+			LockDemo.reentrantLock.unlock();
+			break;
 		}
 	}
 }
