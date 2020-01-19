@@ -2,6 +2,7 @@ package com.david.thread;
 
 /**
  * @Description
+ * 	线程安全的单例模式
  * @author Bu Dawei
  * @date 2020年1月16日
  * @version
