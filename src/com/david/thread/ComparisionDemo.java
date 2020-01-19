@@ -33,6 +33,14 @@ class MyRun implements Runnable{
 	}
 }
 
+/**
+ * 
+ * @Description
+ * 	extends Thread 和 implements Runnable的比较
+ * @author Bu Dawei
+ * @date 2020年1月19日
+ * @version
+ */
 public class ComparisionDemo {
 
 	public static void main(String[] args) {
