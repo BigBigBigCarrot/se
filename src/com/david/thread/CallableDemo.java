@@ -45,7 +45,7 @@ public class CallableDemo {
 class MyCall implements Callable<Integer> {
 
 	@Override
-	public Integer call() throws Exception {
+	public Integer call() throws Exception {//可以抛出异常（不是必要的）（run方法不能抛出异常，只能内部捕获）
 		int sum = 0;
 		for (int i = 0; i <= 100; i++) {
 			if (i % 2 == 0) {

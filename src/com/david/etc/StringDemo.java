@@ -69,6 +69,64 @@ public class StringDemo {
 		StringTest st = new StringTest();
 		st.change(st.str);
 	}
+	
+	/**
+	 * 	将给定的字符的某个连续部分反转，比如"abcdefg"反转为"abedcfg"
+	 * @param str
+	 * @param starIndex
+	 * @param endIndex
+	 * @return
+	 */
+	public String reverse1(String str,int starIndex,int endIndex) {
+		if(str==null) {
+			return "";
+		}
+		char[] arr=str.toCharArray();
+		for (int x=starIndex,y=endIndex; x < y; x++,y--) {
+			char temp=arr[x];
+			arr[x]=arr[y];
+			arr[y]=temp;
+		}
+		return new String(arr);
+	}
+	/**
+	 * 	将给定的字符的某个连续部分反转，比如"abcdefg"反转为"abedcfg"
+	 * @param str
+	 * @param starIndex
+	 * @param endIndex
+	 * @return
+	 */
+	public String reverse2(String str,int starIndex,int endIndex) {
+		if(str==null) {
+			return "";
+		}
+		StringBuilder sb=new StringBuilder(str.length());
+		
+		sb.append(str.substring(0, starIndex));
+		
+		for (int i = endIndex; i >= starIndex; i--) {
+			sb.append(str.charAt(i));
+		}
+		
+		sb.append(str.substring(endIndex+1, str.length()));
+		return sb.toString();
+	}
+
+	@Test
+	public void test5() {
+		String str="abcdefg";
+		String reverseStr=reverse1(str,2,5);
+		System.out.println(reverseStr);
+		String reverseStr2=reverse2(str,2,5);
+		System.out.println(reverseStr2);
+	}
+	
+	@Test
+	public void test6() {
+		String str="ab";
+		System.out.println("\"ab\".substring(1,1):"+str.substring(1,1));
+		System.out.println("\"ab\".substring(1,2):"+str.substring(1,2));
+	}
 
 }
 
