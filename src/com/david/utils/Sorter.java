@@ -1,10 +1,14 @@
 package com.david.utils;
 
+@Deprecated
 /**
- * 全部为从小到大排序
  * 
- * @author David
- *
+ * @Description
+ * 	学习和演示用，全部为从小到大排序
+ * 	需要使用时，用自带的或者Collections和Arrays的排序和查找即可
+ * @author Bu Dawei
+ * @date 2020年1月21日
+ * @version
  */
 public class Sorter {
 

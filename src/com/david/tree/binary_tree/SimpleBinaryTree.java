@@ -1,7 +1,5 @@
 package com.david.tree.binary_tree;
 
-import java.util.Queue;
-
 /**
 * 二叉树的定义：或为空，或只有根节点，或有左子树和右子树（5种基本形态）
 * 二叉树性质：
