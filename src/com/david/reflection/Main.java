@@ -1,5 +1,10 @@
 package com.david.reflection;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+import org.junit.Test;
+
 public class Main {
 	public static String reverse(String str){
 		if(str==null||str.length()==1){
@@ -50,5 +55,13 @@ public class Main {
 		Object[] oArray=new Object[3];
 		System.out.println(oArray.getClass().getName());
 	}
-
+	
+	@Test
+	public void f4(){
+//		String[] strArray1={"1","2"};
+		String[] strArray2=(String[])Array.newInstance(String.class, 2);
+		strArray2[0]="3";
+		strArray2[1]="4";
+		System.out.println(Arrays.toString(strArray2));
+	}
 }
