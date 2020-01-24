@@ -1,6 +1,7 @@
 package com.david.etc;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Test;
@@ -38,11 +39,37 @@ public class GenericDemo {
 	}
 	
 	@Test
+	/**
+	 * 泛型方法调用示例
+	 */
 	public void genericMethodTest() {
 		Integer[] arr= {1,2,3};
 		List<Integer> list=copyFromArrayToList(arr);
 		System.out.println(list);
 	}
+	
+	/**
+	 * 通配符示例
+	 * @param list：可以是List<Integer> 、List<String>等
+	 */
+	public void print(List<?> list) {
+		System.out.println(list);
+	}
+	
+	public void print2(List<? extends Integer> list) {
+		System.out.println(list);
+	}
+	
+	@Test
+	public void printTest() {
+		List<Integer> list1=Arrays.asList(1,2,3,4);
+		List<String> list2=Arrays.asList("a","b","c","d");
+		List list3=Arrays.asList(1.1,2.2,3,4);
+		print(list1);
+		print(list2);
+		print(list3);
+	}
+	
 }
 
 class Father<T1,T2>{
@@ -53,10 +80,6 @@ class Father<T1,T2>{
  * @Description
  * 	子类不保留父类的泛型
  * 	1)没有类型 擦除
- * @author Bu Dawei
- * @date 2020年1月22日
- * @param <A>
- * @param <B>
  */
 class Son1<A,B>extends Father{//等价于class Son extends Father<Object,Object>
 }
@@ -82,5 +105,10 @@ class Son3<T1,T2,A,B>extends Father<T1,T2>{//等价于class Son extends Father<O
 class Son4<T2,A,B>extends Father<Integer,T2>{//等价于class Son extends Father<Object,Object>
 }
 
+/**
+ * 
+ * @Description
+ * 	要求A必须是继承Number，B必须实现Comparable接口
+ */
 class C1<A extends Number,B extends Comparable>{
  }
