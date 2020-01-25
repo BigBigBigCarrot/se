@@ -16,8 +16,8 @@ public class StaticProxy implements Action {
 		this.actionObject = actionObject;
 	}
 
-	public void doSomething() {
-		System.out.println("proxy do");
-		actionObject.doSomething();
+	public Object doSomething(String arg) {
+		System.out.println("staticProxy do");
+		return actionObject.doSomething(arg);
 	}
 }

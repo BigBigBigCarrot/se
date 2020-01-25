@@ -1,5 +1,5 @@
 package pers.david.designpattern.proxy;
 
 public interface Action {
-	public void doSomething();
+	public Object doSomething(String arg);
 }
