@@ -44,56 +44,56 @@ public class DynamicProxyDemo {
 
 	@Test
 	/**
-	 * 	动态代理的详细写法，附带详细注释，比较好理解
+	 * 	动态代理的详细写法，比较好理解
 	 */
 	public void demo2() {
-		Action actionImpl=new ActionImpl();
-		Action actionProxyInsatcne=(Action)MyProxyFactory.getProxyInsatcne(actionImpl);//传入的impl不是硬编码，也可以穿其他接口的impl
+		Action actionImpl=new ActionImpl();//生成一个接口实现类的实例
+		Action actionProxyInsatcne=(Action)MyProxyFactory.getProxyInsatcne(actionImpl);//获取Action的动态代理对象，
+			//动态代理在调用接口方法的时候会调用传入的actionImpl中的对应方法，并且可以在调用actionImpl方法的前后定义一系列其他的操作，即AOP(比如前后打印日志)
+			//由于动态代理是软编码，传入的impl不仅可以是Action的实现类实例,也可以传其他接口的实现类实例，所以这一套流程中额外的AOP操作对其他所有接口都有效
 		System.out.println(actionProxyInsatcne.getClass());//class com.sun.proxy.$Proxy4
-		//actionProxyInsatcne是com.sun.proxy.$Proxy4——代理类的实例对象，通过强制类型转换暴露出Action接口定义的方法以供调用，
-		//actionProxyInsatcne没有硬编码实现Action定义的接口，而是运行时利用反射动态实现的
-		//Object java.lang.reflect.Proxy.newProxyInstance(ClassLoader loader, Class<?>[] interfaces, InvocationHandler h)
-		actionProxyInsatcne.doSomething("传入参数1");
-		actionProxyInsatcne.sayHi("Jane");
-	}
-}
-class DynamicProxy{
-	public Object doThing(String arg) {
-		return "successful";
+			//actionProxyInsatcne是com.sun.proxy.$Proxy4——代理类的实例对象，通过强制类型转换暴露出Action接口定义的方法以供调用，
+			//actionProxyInsatcne没有硬编码实现Action定义的接口，而是运行时利用反射动态实现的
+			//Object java.lang.reflect.Proxy.newProxyInstance(ClassLoader loader, Class<?>[] interfaces, InvocationHandler h)
+		actionProxyInsatcne.doSomething("传入参数1");//不但执行了ActionImpl中对应的实现方法，同时还有动态代理对象的handler种定义的AOP代码
+		actionProxyInsatcne.sayHi("Jane");//不但执行了ActionImpl中对应的实现方法，同时还有动态代理对象的handler种定义的AOP代码
 	}
 }
 
 class MyProxyFactory{
 	/**
 	 * 
-	 * @param obj 被代理的对象
+	 * @param implementation 被代理的接口的实现类的实例
 	 * @return
 	 */
-	public static Object getProxyInsatcne(Object obj) {
+	public static Object getProxyInsatcne(Object implementation) {
 		MyInvocationHandler handler=new MyInvocationHandler();
-		handler.bind(obj);
+		handler.bind(implementation);
 		
-		Object proxy=Proxy.newProxyInstance(obj.getClass().getClassLoader(), obj.getClass().getInterfaces(), handler);
+		Object proxy=Proxy.newProxyInstance(implementation.getClass().getClassLoader(), implementation.getClass().getInterfaces(), handler);
+		//第一个参数是要生成的接口实现类的ClassLoader，通过ClassLoader来动态生成实例
+		//第二个参数为接口数组，即这个动态代理对外提供哪些接口代理
+		//第三个参数是handler，通过handler
 		return proxy;
 	}
 }
 
 class MyInvocationHandler implements InvocationHandler{
-	private Object obj;//需要使用被代理类的对象进行赋值，obj为被代理的对象
+	private Object implementation;//接口的实现类的实例（Object类型，什么都可以放，不一定只能放ActionImpl，软编码）
 	
-	public void bind(Object obj) {
-		this.obj=obj;
+	public void bind(Object implementation) {
+		this.implementation=implementation;
 	}
 	
 	/**
-	 * 	通过代理类的对象调用方法时，会自动调用该方法。
-	 * 	将被代理类要执行的方法的功能声明在invoke()中
+	 * 	通过代理类的对象调用接口方法时，会自动调用该方法。
+	 * 	invoke除了调用绑定的imple种对应的方法，还在执行的前后定义了一些列AOP操作
 	 */
 	@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 		System.out.println(method);
 		System.out.println("=====打印日志1=====");//aop
-		Object returnValue=method.invoke(obj, args);//代理对象调用的方法，此方法也作为被代理对象要调用的方法
+		Object returnValue=method.invoke(implementation, args);//根据方法名签名调用对应的implementation中对应的实现方法
 		System.out.println("=====打印日志2=====");//aop
 		
 		return returnValue;//returnValue作为被代理的方法的返回值
