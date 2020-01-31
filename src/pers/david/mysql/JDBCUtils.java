@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class JDBCUtils {
 
 	public static final String url="jdbc:mysql://localhost/caiming";
-	public static final String name = "org.mariadb.jdbc.Driver";  
+	public static final String driver = "org.mariadb.jdbc.Driver";  
 	public static final String user = "root";  
     public static final String password = "123";
     
@@ -26,7 +26,7 @@ public class JDBCUtils {
     		return connection;
     	}
     	try{
-    		Class.forName(name);
+    		Class.forName(driver);
     		connection = DriverManager.getConnection(url, user, password);//��ȡ���� 
 		}catch (Exception e) {
 			System.out.println(e.toString());
