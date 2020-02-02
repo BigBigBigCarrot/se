@@ -22,6 +22,7 @@ public class ConsumerAndProducter {
 		
 		p1.start();
 		c1.start();
+		System.out.println("end");
 	}
 
 }
