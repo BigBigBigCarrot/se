@@ -16,7 +16,7 @@ import org.junit.Test;
 
 /**
  * @Description
- * 	Map接口不继承自Collection接口
+ * 	注意：Map接口不继承自Collection接口
  * @author Bu Dawei
  * @date 2020年1月20日
  * @version 

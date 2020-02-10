@@ -1,10 +1,12 @@
-package pers.david.etc;
+package pers.david.collections;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Properties;
+
+import org.junit.Test;
 
 public class PropertiesTest {
 
@@ -13,8 +15,6 @@ public class PropertiesTest {
 	}
 
 	public static void main(String[] args) throws FileNotFoundException, IOException{
-//		load();
-		loadFromXML();
 	}
 	
 	/**
@@ -22,10 +22,11 @@ public class PropertiesTest {
 	 * @throws FileNotFoundException
 	 * @throws IOException
 	 */
-	public static void load() throws FileNotFoundException, IOException {
+	@Test
+	public void load() throws FileNotFoundException, IOException {
 		String userDir=System.getProperties().getProperty("user.dir");
 //		System.out.println(dir);
-		String filePath=userDir+"\\bin\\com\\david\\etc\\Test.properties";
+		String filePath=userDir+"\\bin\\pers\\david\\collections\\Test.properties";
 		
 		Properties pps = new Properties();
 		pps.load(new FileInputStream(filePath));
@@ -37,10 +38,11 @@ public class PropertiesTest {
 		}
 	}
 	
-	public static void loadFromXML() throws FileNotFoundException, IOException{
+	@Test
+	public void loadFromXML() throws FileNotFoundException, IOException{
 		String userDir=System.getProperties().getProperty("user.dir");
 //		System.out.println(dir);
-		String filePath=userDir+"\\bin\\com\\david\\etc\\TestPropertiesFile.xml";
+		String filePath=userDir+"\\bin\\pers\\david\\collections\\TestPropertiesFile.xml";
 		
 		Properties pps = new Properties();
 		pps.loadFromXML(new FileInputStream(filePath));

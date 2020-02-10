@@ -1,4 +1,4 @@
-package pers.david.etc;
+package pers.david.str;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
