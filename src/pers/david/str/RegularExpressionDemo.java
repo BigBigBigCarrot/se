@@ -1,10 +1,10 @@
-package pers.david.regular.expression;
+package pers.david.str;
 
 import java.util.regex.Pattern;
 
-public class Main {
+public class RegularExpressionDemo {
 
-	public Main() {
+	public RegularExpressionDemo() {
 		// TODO Auto-generated constructor stub
 	}
 

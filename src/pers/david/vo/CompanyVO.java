@@ -6,7 +6,6 @@ public class CompanyVO implements java.io.Serializable{
 	String companyName;
 
 	public CompanyVO() {
-		// TODO Auto-generated constructor stub
 	}
 	public CompanyVO(String companyName) {
 		this.companyName = companyName;

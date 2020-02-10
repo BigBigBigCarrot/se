@@ -1,4 +1,4 @@
-package pers.david.polymorphic;
+package pers.david.jvm.polymorphic;
 
 import java.util.Scanner;
 
