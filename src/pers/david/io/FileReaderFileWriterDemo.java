@@ -15,7 +15,7 @@ import org.junit.Test;
 /**
  * 
  * @Description 
- * 节点流的两种两种基本的流：
+ * 	节点流的四种基本的流：
  * 	字符流（FileReader、FileWriter）：
  * 		文本文件使用字符流处理，比如读取后在内存显示是没问题的。 如果使用字符流处理二进制文件，比如复制到新的文件，会出问题。
  * 	字节流（FileInputStream、FileOutputStream）：
