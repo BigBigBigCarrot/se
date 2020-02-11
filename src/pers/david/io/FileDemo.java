@@ -2,6 +2,8 @@ package pers.david.io;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 import org.junit.Test;
 
@@ -19,14 +21,53 @@ public class FileDemo {
 
 	public FileDemo() {
 	}
+	
+	public static void main(String[] args) {
+		File file=new File("hellooooooo.txt");//相对路径，相对于当前工程的根目录，不含所在包的路径。（不推荐）
+			//开发中也不对应编译后的target或者bin路径，如果打包编译后那肯定是相对于打包编译后的根目录
+		System.out.println(file.getAbsolutePath());
+	}
 
+	@Test
+	public void seperatorTest() {
+		//不同操作系统的路径分隔符可能不一样，用File.separator最保险。
+		System.out.println(File.separator);
+	}
+
+	/**
+	 * 获取当前class文件同路径下的指定文件的File对象实例
+	 * @throws URISyntaxException
+	 */
+	@Test
+	public void f1() throws URISyntaxException {
+		URI uri=this.getClass().getResource("pokemon.txt").toURI();
+		File file=new File(uri);
+		System.out.println(file.exists());//true
+		// "D:\ITSpace\WorkSpace\JavaSE_WorkSpace\javase-practice\bin\pers\david\io\pokemon.txt"
+		System.out.println(file.getAbsolutePath());
+	}
+	/**
+	 * 获取当前classpath路径下的指定文件的File对象实例
+	 * @throws URISyntaxException
+	 */
+	@Test
+	public void f2() throws URISyntaxException {
+		URI uri=this.getClass().getClassLoader().getSystemResource("propertiesDemo.properties").toURI();
+		File file=new File(uri);
+		System.out.println(file.exists());//true
+		// "D:\ITSpace\WorkSpace\JavaSE_WorkSpace\javase-practice\bin\propertiesDemo.properties"
+		System.out.println(file.getAbsolutePath());
+	}
+	
 	
 	@Test
 	public void FileConstructorTest() {
-		File file1=new File("hello.txt");//相对路径，相对于这个class文件的所在路径
+		File file1=new File("hello.txt");//相对路径，相对于当前工程的根目录，不含所在包的路径。（不推荐）
 		File file2=new File("C:\\Users\\Administrator\\Desktop\\hello.txt");
 		File file3=new File("C:\\Users\\Administrator\\Desktop","hello.txt");
 		File file4=new File(file3,"hi.txt");
+
+		System.out.println(file1.getAbsolutePath());
 		
 		System.out.println(file1);
 		System.out.println(file2);
@@ -37,7 +78,7 @@ public class FileDemo {
 	@Test
 	public void FileInfo1() {
 		//File对象可以指文件也可以指目录
-		File file1=new File("hello.txt");
+		File file1=new File("hello.txt");//（不推荐）
 		File file2=new File("C:\\Users\\Administrator\\Desktop\\hi.txt");
 	
 		System.out.println(file1.getAbsolutePath());
@@ -60,7 +101,7 @@ public class FileDemo {
 	@Test
 	public void FileInfo2() {
 		//File对象可以指文件也可以指目录
-		File file1=new File("hello.txt");
+		File file1=new File("hello.txt");//（不推荐）
 		File file2=new File("C:\\Users\\Administrator\\Desktop");
 		
 		System.out.println(file1.isFile());

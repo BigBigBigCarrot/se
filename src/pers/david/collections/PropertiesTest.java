@@ -1,9 +1,13 @@
 package pers.david.collections;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Enumeration;
+import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
 import org.junit.Test;
@@ -21,15 +25,15 @@ public class PropertiesTest {
 	 * load *.properties
 	 * @throws FileNotFoundException
 	 * @throws IOException
+	 * @throws URISyntaxException 
 	 */
 	@Test
-	public void load() throws FileNotFoundException, IOException {
-		String userDir=System.getProperties().getProperty("user.dir");
-//		System.out.println(dir);
-		String filePath=userDir+"\\bin\\pers\\david\\collections\\Test.properties";
+	public void load() throws FileNotFoundException, IOException, URISyntaxException {
+		URI uri=this.getClass().getResource("Test.properties").toURI();
+		File file=new File(uri);
 		
 		Properties pps = new Properties();
-		pps.load(new FileInputStream(filePath));
+		pps.load(new FileInputStream(file));
 		Enumeration enum1 = pps.propertyNames();// 得到配置文件的名字
 		while (enum1.hasMoreElements()) {
 			String strKey = (String) enum1.nextElement();
@@ -39,13 +43,13 @@ public class PropertiesTest {
 	}
 	
 	@Test
-	public void loadFromXML() throws FileNotFoundException, IOException{
-		String userDir=System.getProperties().getProperty("user.dir");
-//		System.out.println(dir);
-		String filePath=userDir+"\\bin\\pers\\david\\collections\\TestPropertiesFile.xml";
+	public void loadFromXML() throws URISyntaxException, InvalidPropertiesFormatException, FileNotFoundException, IOException {
+
+		URI uri=this.getClass().getResource("TestPropertiesFile.xml").toURI();
+		File file=new File(uri);
 		
 		Properties pps = new Properties();
-		pps.loadFromXML(new FileInputStream(filePath));
+		pps.loadFromXML(new FileInputStream(file));
 		Enumeration enum1 = pps.propertyNames();// 得到配置文件的名字
 		while (enum1.hasMoreElements()) {
 			String strKey = (String) enum1.nextElement();
