@@ -57,6 +57,8 @@ public class DynamicProxyDemo {
 			//Object java.lang.reflect.Proxy.newProxyInstance(ClassLoader loader, Class<?>[] interfaces, InvocationHandler h)
 		actionProxyInsatcne.doSomething("传入参数1");//不但执行了ActionImpl中对应的实现方法，同时还有动态代理对象的handler种定义的AOP代码
 		actionProxyInsatcne.sayHi("Jane");//不但执行了ActionImpl中对应的实现方法，同时还有动态代理对象的handler种定义的AOP代码
+		System.out.println(actionProxyInsatcne);
+		System.out.println(actionProxyInsatcne.getClass());//class com.sun.proxy.$Proxy4	说明该实例是代理其实是对象
 	}
 }
 
