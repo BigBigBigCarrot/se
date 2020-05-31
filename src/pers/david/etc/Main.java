@@ -1,8 +1,10 @@
 package pers.david.etc;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -111,5 +113,22 @@ public class Main {
 		};
 		list.sort(comparator);
 		System.out.println(list.toString());
+	}
+	
+
+	@Test
+	public void timeTest() {
+		String timeStr="01:02:03";
+		Date date=new Date();
+//		Date date=new Date(timeStr);
+		System.out.println(date);
+	}
+	
+	@Test
+	public void timeTest2() {
+		String timeStr="01:02:03";
+		Time time= Time.valueOf(timeStr);
+		
+		System.out.println(time);
 	}
 }
