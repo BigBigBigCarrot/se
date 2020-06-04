@@ -11,7 +11,7 @@ import java.net.Socket;
 import org.junit.Test;
 
 /**
- * 1.使用Socket建立cline和server的交互简单demo
+ * 1.使用Socket建立基于TCP协议的cline和server的交互简单demo
  * 2.启动顺序：先开启服务端监听指定的端口，然后再开启客户端向服务端发起连接。
  * 	如果顺序反了，则会客户端会报错，Connection refused: connects
  * @author David
