@@ -64,7 +64,7 @@ public class BufferDemo {
 			//关闭流
 			bos.close();
 			bis.close();
-			//说明：关闭外层流的同事、内层的流也会自动尽心关闭。
+			//说明：关闭外层流的同时、内层的流也会自动进行关闭。
 //			fos.close();
 //			fis.close();
 		} catch (FileNotFoundException e) {

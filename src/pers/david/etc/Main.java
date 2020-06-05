@@ -3,6 +3,7 @@ package pers.david.etc;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -111,5 +112,11 @@ public class Main {
 		};
 		list.sort(comparator);
 		System.out.println(list.toString());
+	}
+	
+	@Test
+	public void dateTest() {
+		Date date=new Date("2020-06-10");
+		System.out.println(date.toLocaleString());
 	}
 }
