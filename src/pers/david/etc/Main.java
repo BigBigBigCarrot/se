@@ -2,6 +2,7 @@ package pers.david.etc;
 
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -134,5 +135,13 @@ public class Main {
 		Time time= Time.valueOf(timeStr);
 		
 		System.out.println(time);
+	}
+	
+	@Test
+	public void listTest() {
+		String[] strs= {"a","b","d"};
+		
+		System.out.println(Arrays.toString(strs));
+		System.out.println(Arrays.asList(strs).toString());
 	}
 }
