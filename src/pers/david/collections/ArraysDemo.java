@@ -1,9 +1,10 @@
 package pers.david.collections;
 
-import java.util.Arrays;
-import java.util.List;
 
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @Description
