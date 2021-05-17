@@ -103,7 +103,7 @@ public class OptionalTester {
     public void testJava8Demo2FlatMap(){
         A instanceOfA=OptionalTester.getInstanceOfA();
         Optional<A> optionalA=Optional.ofNullable(instanceOfA);
-        //flatMap需要自己在闭包里面封装成Optional，而map是帮用户封装好
+        //flatMap需要自己在闭包里面封装成Optional（可以做其他操作和选择，例如使用Optional.of），而map是使用Optional.ofNullable帮用户封装好
         String name =optionalA.flatMap(a->Optional.ofNullable(a.getB())).flatMap(b->Optional.ofNullable(b.getC())).flatMap(c->Optional.ofNullable(c.getName())).orElse("Mike");
         System.out.println(name);
     }
