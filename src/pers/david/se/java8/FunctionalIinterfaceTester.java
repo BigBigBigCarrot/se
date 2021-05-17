@@ -1,4 +1,4 @@
-package pers.david.java8;
+package pers.david.se.java8;
 
 import java.util.Arrays;
 import java.util.List;
