@@ -91,11 +91,20 @@ public class OptionalTester {
     }
 
     @Test
-    public void testJava8Demo(){
+    public void testJava8DemoMap(){
         A instanceOfA=OptionalTester.getInstanceOfA();
         Optional<A> optionalA=Optional.ofNullable(instanceOfA);
         //链式调用，更简洁，不用频繁的判null
         String name=optionalA.map(a->a.getB()).map(b->b.getC()).map(c->c.getName()).orElse("Mike");
+        System.out.println(name);
+    }
+
+    @Test
+    public void testJava8Demo2FlatMap(){
+        A instanceOfA=OptionalTester.getInstanceOfA();
+        Optional<A> optionalA=Optional.ofNullable(instanceOfA);
+        //flatMap需要自己在闭包里面封装成Optional，而map是帮用户封装好
+        String name =optionalA.flatMap(a->Optional.ofNullable(a.getB())).flatMap(b->Optional.ofNullable(b.getC())).flatMap(c->Optional.ofNullable(c.getName())).orElse("Mike");
         System.out.println(name);
     }
 
