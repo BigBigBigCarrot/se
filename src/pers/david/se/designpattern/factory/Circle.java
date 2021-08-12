@@ -1,6 +1,6 @@
 package pers.david.se.designpattern.factory;
 
-public class Circle implements Shape{
+public class Circle implements Shape {
 
     public Circle() {
     }

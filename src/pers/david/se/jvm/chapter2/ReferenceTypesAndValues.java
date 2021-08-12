@@ -19,8 +19,8 @@ import java.text.MessageFormat;
  * 数组中的component type可以是数组类型，也可以是基础数据类型、对象、接口（当component type为基础数据类型、对象、接口时，称作element type ）
  * 当数组中的component type为element type时，即为一维数组
  * 当数组中的component type也是数组时，即为多维数组
- * @author david
  *
+ * @author david
  */
 public class ReferenceTypesAndValues {
 
@@ -36,24 +36,24 @@ public class ReferenceTypesAndValues {
     /**
      * 行数确定，每行的列数不确定的二维数组
      */
-    public static void arrayTest1(){
+    public static void arrayTest1() {
 
         /**
          * 二维数组，在声明时即告诉jvm所需分配的空间为2行2列
          * 引用指向一个一维数组，一维数组中的component type为一维数组
          */
-        String[][] strArray=new String[2][2];
+        String[][] strArray = new String[2][2];
 
         /**
          * 声明一个二维数组，其中引用指向一个一维数组，指定一维数组长度为2，数组中的component type为一维数组，长度未指定
          */
-        String[][] strArbitraryArray=new String[2][];
-        strArbitraryArray[0]=new String[2];
-        strArbitraryArray[1]=new String[3];
+        String[][] strArbitraryArray = new String[2][];
+        strArbitraryArray[0] = new String[2];
+        strArbitraryArray[1] = new String[3];
         for (int i = 0; i < strArbitraryArray.length; i++) {
             for (int j = 0; j < strArbitraryArray[i].length; j++) {
-                strArbitraryArray[i][j]="[{0}][{1}]";
-                strArbitraryArray[i][j]=MessageFormat.format(strArbitraryArray[i][j],i,j);
+                strArbitraryArray[i][j] = "[{0}][{1}]";
+                strArbitraryArray[i][j] = MessageFormat.format(strArbitraryArray[i][j], i, j);
                 System.out.println(strArbitraryArray[i][j]);
             }
         }
@@ -62,10 +62,10 @@ public class ReferenceTypesAndValues {
     /**
      * 数组getClass
      */
-    public static void arrayTest2(){
-        String str="";
-        String[] strArray1=new String[1];
-        String[][] strArray2=new String[1][];
+    public static void arrayTest2() {
+        String str = "";
+        String[] strArray1 = new String[1];
+        String[][] strArray2 = new String[1][];
         System.out.println(str.getClass().getName());
         System.out.println(strArray1.getClass().getName());
         System.out.println(strArray2.getClass().getName());

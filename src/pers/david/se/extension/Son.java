@@ -11,9 +11,9 @@ public class Son extends Father {
     }
 
     public static void main(String[] args) {
-        Father a=new Son();
+        Father a = new Son();
         a.greet();
-        ((Father)a).greet();
+        ((Father) a).greet();
 
     }
 

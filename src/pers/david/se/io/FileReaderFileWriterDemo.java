@@ -13,17 +13,13 @@ import java.net.URISyntaxException;
 import org.junit.Test;
 
 /**
- *
- * @Description
- * 	节点流的四种基本的流：
- * 	字符流（FileReader、FileWriter）：
- * 		文本文件使用字符流处理，比如读取后在内存显示是没问题的。 如果使用字符流处理二进制文件，比如复制到新的文件，会出问题。
- * 	字节流（FileInputStream、FileOutputStream）：
- * 		字节流复制任何文件都没有问题，但是如果读取文本文件到内存中用String或者char显示会有乱码，因为中文和一些特殊字符占的字节不一样。
- *
  * @author Bu Dawei
+ * @Description 节点流的四种基本的流：
+ * 字符流（FileReader、FileWriter）：
+ * 文本文件使用字符流处理，比如读取后在内存显示是没问题的。 如果使用字符流处理二进制文件，比如复制到新的文件，会出问题。
+ * 字节流（FileInputStream、FileOutputStream）：
+ * 字节流复制任何文件都没有问题，但是如果读取文本文件到内存中用String或者char显示会有乱码，因为中文和一些特殊字符占的字节不一样。
  * @date 2020年2月11日
- * @version
  */
 public class FileReaderFileWriterDemo {
 

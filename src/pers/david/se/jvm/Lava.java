@@ -2,14 +2,14 @@ package pers.david.se.jvm;
 
 public class Lava {
 
-	private int speed=5;//5 kilometers per hour
+    private int speed = 5;//5 kilometers per hour
 
-	public Lava() {
-	}
-	
-	void flow(){
-		
-	}
-	
+    public Lava() {
+    }
+
+    void flow() {
+
+    }
+
 
 }

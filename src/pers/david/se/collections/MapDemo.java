@@ -15,11 +15,9 @@ import java.util.TreeMap;
 import org.junit.Test;
 
 /**
- * @Description
- * 	注意：Map接口不继承自Collection接口
  * @author Bu Dawei
+ * @Description 注意：Map接口不继承自Collection接口
  * @date 2020年1月20日
- * @version
  */
 public class MapDemo {
 
@@ -29,26 +27,27 @@ public class MapDemo {
     public static void main(String[] args) {
 
     }
+
     /**
      * HashMap、LinkedHashMap、TreeMap的比较
-     * 	HashMap：不一定按插入顺序遍历
-     * 	LinkedHashMap：按插入顺序遍历
-     * 	TreeMap：按key值降序排列遍历
+     * HashMap：不一定按插入顺序遍历
+     * LinkedHashMap：按插入顺序遍历
+     * TreeMap：按key值降序排列遍历
      */
     @Test
     public void comparison() {
         Set<String> set;
-        Map<String,Integer> hashMap=new HashMap();
-        Map<String,Integer> linkedHashMap=new LinkedHashMap();
+        Map<String, Integer> hashMap = new HashMap();
+        Map<String, Integer> linkedHashMap = new LinkedHashMap();
 
         hashMap.put("a", 3);
         hashMap.put("1", 2);
         hashMap.put("0", 6);
         System.out.println(hashMap.toString());//{0=6, a=3, 1=2}，不一定按插入顺序遍历
-        set=hashMap.keySet();
+        set = hashMap.keySet();
         System.out.println(set.toString());//[0, a, 1]
-        for (Entry<String,Integer> entry: hashMap.entrySet()) {
-            System.out.print(entry.getKey()+"\t");
+        for (Entry<String, Integer> entry : hashMap.entrySet()) {
+            System.out.print(entry.getKey() + "\t");
         }
         System.out.print("\n");
 
@@ -56,10 +55,10 @@ public class MapDemo {
         linkedHashMap.put("1", 2);
         linkedHashMap.put("0", 6);
         System.out.println(linkedHashMap.toString());//{0=6, a=3, 1=2}，按插入顺序遍历
-        set=linkedHashMap.keySet();
+        set = linkedHashMap.keySet();
         System.out.println(set.toString());//[a, 1, 0]
 
-        Map<String,Integer> treeMap=new TreeMap();
+        Map<String, Integer> treeMap = new TreeMap();
 
         treeMap.put("a", 3);
         treeMap.put("1", 2);
@@ -71,24 +70,24 @@ public class MapDemo {
 
     @Test
     public void propertiesDemo() {
-        FileInputStream fis=null;
+        FileInputStream fis = null;
         try {
-            Properties pros=new Properties();
-            String fileURI=getClass().getResource("/")+"/propertiesDemo.properties";
-            fis=new FileInputStream(fileURI.replace("file:/", ""));
+            Properties pros = new Properties();
+            String fileURI = getClass().getResource("/") + "/propertiesDemo.properties";
+            fis = new FileInputStream(fileURI.replace("file:/", ""));
             pros.load(fis);
 
-            String name=pros.getProperty("name");
-            String password=pros.getProperty("password");
-            String pattern="name:{0} \t password:{1}";
-            System.out.println(MessageFormat.format(pattern, name,password));
+            String name = pros.getProperty("name");
+            String password = pros.getProperty("password");
+            String pattern = "name:{0} \t password:{1}";
+            System.out.println(MessageFormat.format(pattern, name, password));
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            if(fis!=null) {
+        } finally {
+            if (fis != null) {
                 try {
                     fis.close();
-                }catch (IOException e) {
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }

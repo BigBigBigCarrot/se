@@ -119,28 +119,29 @@ public class EtcMain {
 
     @Test
     public void dateTest() {
-        Date date=new Date("2020-06-10");
+        Date date = new Date("2020-06-10");
         System.out.println(date.toLocaleString());
     }
+
     @Test
     public void timeTest() {
-        String timeStr="01:02:03";
-        Date date=new Date();
+        String timeStr = "01:02:03";
+        Date date = new Date();
 //		Date date=new Date(timeStr);
         System.out.println(date);
     }
 
     @Test
     public void timeTest2() {
-        String timeStr="01:02:03";
-        Time time= Time.valueOf(timeStr);
+        String timeStr = "01:02:03";
+        Time time = Time.valueOf(timeStr);
 
         System.out.println(time);
     }
 
     @Test
     public void listTest() {
-        String[] strs= {"a","b","d"};
+        String[] strs = {"a", "b", "d"};
 
         System.out.println(Arrays.toString(strs));
         System.out.println(Arrays.asList(strs).toString());

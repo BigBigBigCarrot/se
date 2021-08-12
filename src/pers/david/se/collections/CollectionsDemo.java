@@ -7,10 +7,9 @@ import java.util.List;
 import org.junit.Test;
 
 /**
- * @Description
  * @author Bu Dawei
+ * @Description
  * @date 2020年1月21日
- * @version
  */
 public class CollectionsDemo {
 

@@ -9,10 +9,9 @@ import org.junit.Test;
 import pers.david.se.vo.Student;
 
 /**
- * @Description
  * @author Bu Dawei
+ * @Description
  * @date 2020年1月20日
- * @version
  */
 public class ListDemo {
 

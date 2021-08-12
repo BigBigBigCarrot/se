@@ -18,19 +18,20 @@ public class PropertiesTest {
         // TODO Auto-generated constructor stub
     }
 
-    public static void main(String[] args) throws FileNotFoundException, IOException{
+    public static void main(String[] args) throws FileNotFoundException, IOException {
     }
 
     /**
      * load *.properties
+     *
      * @throws FileNotFoundException
      * @throws IOException
      * @throws URISyntaxException
      */
     @Test
     public void load() throws FileNotFoundException, IOException, URISyntaxException {
-        URI uri=this.getClass().getResource("Test.properties").toURI();
-        File file=new File(uri);
+        URI uri = this.getClass().getResource("Test.properties").toURI();
+        File file = new File(uri);
 
         Properties pps = new Properties();
         pps.load(new FileInputStream(file));
@@ -45,8 +46,8 @@ public class PropertiesTest {
     @Test
     public void loadFromXML() throws URISyntaxException, InvalidPropertiesFormatException, FileNotFoundException, IOException {
 
-        URI uri=this.getClass().getResource("TestPropertiesFile.xml").toURI();
-        File file=new File(uri);
+        URI uri = this.getClass().getResource("TestPropertiesFile.xml").toURI();
+        File file = new File(uri);
 
         Properties pps = new Properties();
         pps.loadFromXML(new FileInputStream(file));

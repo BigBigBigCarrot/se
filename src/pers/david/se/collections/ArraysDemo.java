@@ -6,10 +6,9 @@ import java.util.List;
 import org.junit.Test;
 
 /**
- * @Description
  * @author Bu Dawei
+ * @Description
  * @date 2020年1月15日
- * @version
  */
 public class ArraysDemo {
 
@@ -30,26 +29,28 @@ public class ArraysDemo {
      */
     @Test
     public void fillPractice() {
-        int[] a= {3,5,7,8,2};
+        int[] a = {3, 5, 7, 8, 2};
         Arrays.fill(a, 6);
         System.out.print(Arrays.toString(a));
     }
+
     /**
      * Arrays.copyOf：复制数组
      */
     @Test
     public void copyOfPractice() {
-        Integer[] a= {3,5,7,8,2};
-        Integer[] b=Arrays.copyOf(a, a.length);
-        b[0]=0;
+        Integer[] a = {3, 5, 7, 8, 2};
+        Integer[] b = Arrays.copyOf(a, a.length);
+        b[0] = 0;
         System.out.print(Arrays.toString(a));
     }
+
     /**
-     * 	Arrays.asList:转化为List
+     * Arrays.asList:转化为List
      */
     @Test
     public void asListPractice() {
-        List list=Arrays.asList(1,2,3);
+        List list = Arrays.asList(1, 2, 3);
         System.out.print(list.toString());
     }
 
@@ -57,8 +58,8 @@ public class ArraysDemo {
      * Arrays.toString：转换为形如[3, 5, 7, 8, 2]样式的字符串
      */
     @Test
-    public  void toStringPractice() {
-        Integer[] a= {3,5,7,8,2};
+    public void toStringPractice() {
+        Integer[] a = {3, 5, 7, 8, 2};
         System.out.print(Arrays.toString(a));
     }
 

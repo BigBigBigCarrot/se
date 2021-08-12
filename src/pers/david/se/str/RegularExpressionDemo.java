@@ -4,18 +4,18 @@ import java.util.regex.Pattern;
 
 public class RegularExpressionDemo {
 
-	public RegularExpressionDemo() {
-		// TODO Auto-generated constructor stub
-	}
+    public RegularExpressionDemo() {
+        // TODO Auto-generated constructor stub
+    }
 
-	public static void main(String[] args) {
-		// String content = "I am noob " + "from runoob.com.";
-		// String pattern = ".*runoob.*";
-		// boolean isMatch = Pattern.matches(pattern, content);
-		// System.out.println("字符串中是否包含了 'runoob' 子字符串? " + isMatch);
+    public static void main(String[] args) {
+        // String content = "I am noob " + "from runoob.com.";
+        // String pattern = ".*runoob.*";
+        // boolean isMatch = Pattern.matches(pattern, content);
+        // System.out.println("字符串中是否包含了 'runoob' 子字符串? " + isMatch);
 
-		String content;
-		String pattern;
+        String content;
+        String pattern;
 //		content = "啊a";
 //		pattern = ".{2}";
 
@@ -38,11 +38,11 @@ public class RegularExpressionDemo {
 //		pattern = "[0-9]{1,}[\\.]{0,1}[0-9]{0,}";
 //		//pattern = "\\d*";
 
-		content = "aAbB";
-		pattern = "[aA-zZ]+";
-		//pattern = "\\d*";
-		
-		boolean isMatch = Pattern.matches(pattern, content);
-		System.out.println(isMatch);
-	}
+        content = "aAbB";
+        pattern = "[aA-zZ]+";
+        //pattern = "\\d*";
+
+        boolean isMatch = Pattern.matches(pattern, content);
+        System.out.println(isMatch);
+    }
 }
