@@ -33,12 +33,12 @@ class Seller implements Runnable {
             if (ticket > 0) {
                 System.out.println(Thread.currentThread().getName() + "卖票，票号：" + ticket);
                 ticket--;
+                LockDemo.reentrantLock.unlock();
                 try {
                     Thread.sleep(100);// 完成抢票后slepp下，给其他线程让出机会，增大切换概率（不加也行）
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                LockDemo.reentrantLock.unlock();
                 continue;
             }
             LockDemo.reentrantLock.unlock();
