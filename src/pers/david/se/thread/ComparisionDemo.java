@@ -56,6 +56,10 @@ public class ComparisionDemo {
         new Thread(mr, "C").start();
         new Thread(mr, "D").start();
         new Thread(mr, "E").start();
+
+        //总结：以上两种方式最终都要通过Thread的实例来跑线程，
+        // 不同的是前者自己就继承自Thread，所以用自己的实例（Thread实现了runnable接口，可以调用自己的run方法），
+        // 后者实现了runnable接口，然后交给新建的Thread实例去调用自己的run方法
     }
 
 }
